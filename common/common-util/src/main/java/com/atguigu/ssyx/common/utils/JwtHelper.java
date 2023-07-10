@@ -1,9 +1,11 @@
 package com.atguigu.ssyx.common.utils;
 
 import io.jsonwebtoken.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 import java.util.Date;
 
+@Slf4j
 public class JwtHelper {
 
     private static long tokenExpiration = 365*24*60*60*1000;
@@ -11,8 +13,8 @@ public class JwtHelper {
 
     //根据userId+userName生成token字符串
     public static String createToken(Long userId, String userName) {
-        String token = Jwts.builder()
-                .setSubject("ssyx-USER")
+        return Jwts.builder()
+                .setSubject("yx-USER")
 
                 .setExpiration(new Date(System.currentTimeMillis() + tokenExpiration))
 
@@ -23,7 +25,6 @@ public class JwtHelper {
 
                 .compressWith(CompressionCodecs.GZIP)
                 .compact();
-        return token;
     }
 
     public static Long getUserId(String token) {
@@ -48,11 +49,14 @@ public class JwtHelper {
         //jwttoken无需删除，客户端扔掉即可。
     }
 
+    /**
+     * 生成token
+     */
     public static void main(String[] args) {
         String token = JwtHelper.createToken(1L, "admin");
-        System.out.println(token);
+        log.info(token);
 
-        System.out.println(JwtHelper.getUserId(token));
-        System.out.println(JwtHelper.getUserName(token));
+        log.info("UserId:{}", JwtHelper.getUserId(token));
+        log.info("UserName:{}", JwtHelper.getUserName(token));
     }
 }
