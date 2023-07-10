@@ -28,10 +28,10 @@ public class CodeGet {
 
         // 3、数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/shequ-order?serverTimezone=GMT%2B8&useSSL=false");
+        dsc.setUrl("jdbc:mysql://localhost:3306/yx-order?serverTimezone=GMT%2B8&useSSL=false");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("root");
+        dsc.setPassword("123456");
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
 

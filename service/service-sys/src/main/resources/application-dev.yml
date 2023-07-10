@@ -9,9 +9,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/shequ-sys?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/yx-sys?characterEncoding=utf-8&useSSL=false
     username: root
-    password: root
+    password: 123456
   redis:
     host: localhost
     port: 6379
