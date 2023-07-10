@@ -9,8 +9,8 @@ public enum CouponType {
     CASH(2,"现金卷");
 
     @EnumValue
-    private Integer code;
-    private String comment ;
+    private final Integer code;
+    private final String comment ;
 
     CouponType(Integer code, String comment ){
         this.code=code;

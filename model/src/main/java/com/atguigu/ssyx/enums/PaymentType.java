@@ -9,8 +9,8 @@ public enum PaymentType {
     WEIXIN(2,"微信" );
 
     @EnumValue
-    private Integer code ;
-    private String comment ;
+    private final Integer code ;
+    private final String comment ;
 
     PaymentType(Integer code, String comment ){
         this.code = code;

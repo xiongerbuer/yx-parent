@@ -14,8 +14,8 @@ public enum OrderStatus {
     CANCEL(-1,"已取消");
 
     @EnumValue
-    private Integer code ;
-    private String comment ;
+    private final Integer code ;
+    private final String comment ;
 
     OrderStatus(Integer code, String comment ){
         this.code = code;

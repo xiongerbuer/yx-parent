@@ -9,8 +9,8 @@ public enum CouponStatus {
     USED(2,"已使用");
 
     @EnumValue
-    private Integer code ;
-    private String comment ;
+    private final Integer code ;
+    private final String comment ;
 
     CouponStatus(Integer code, String comment ){
         this.code=code;

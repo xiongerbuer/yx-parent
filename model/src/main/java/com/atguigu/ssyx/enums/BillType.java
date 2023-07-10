@@ -15,8 +15,8 @@ public enum BillType {
     REFUND(1,"订单退款" );
 
     @EnumValue
-    private Integer code ;
-    private String comment ;
+    private final Integer code ;
+    private final String comment ;
 
     BillType(Integer code, String comment ){
         this.code=code;
