@@ -10,8 +10,8 @@ public enum PaymentStatus {
     //REFUND(-1,"已退款");
 
     @EnumValue
-    private Integer code ;
-    private String comment ;
+    private final Integer code ;
+    private final String comment ;
 
     PaymentStatus(Integer code, String comment) {
         this.code = code;
