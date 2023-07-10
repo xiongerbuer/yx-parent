@@ -5,6 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 import java.util.Date;
 
+/**
+ * token生成
+ */
 @Slf4j
 public class JwtHelper {
 
@@ -50,7 +53,7 @@ public class JwtHelper {
     }
 
     /**
-     * 生成token
+     * 生成token测试
      */
     public static void main(String[] args) {
         String token = JwtHelper.createToken(1L, "admin");
