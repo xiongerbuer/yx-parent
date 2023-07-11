@@ -25,7 +25,6 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         if(!StringUtils.isEmpty(name)) {
             wrapper.like(Admin::getName,name);
         }
-        IPage<Admin> adminPage = baseMapper.selectPage(pageParam, wrapper);
-        return adminPage;
+        return baseMapper.selectPage(pageParam, wrapper);
     }
 }

@@ -5,6 +5,7 @@ import com.atguigu.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.acl.Permission;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,10 +14,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/admin/acl/permission")
 @Api(tags = "菜单管理")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin //跨域
 public class PermissionController {
 
-    @Autowired
     private PermissionService permissionService;
 
     //查询所有菜单

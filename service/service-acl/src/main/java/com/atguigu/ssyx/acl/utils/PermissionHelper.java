@@ -27,7 +27,7 @@ public class PermissionHelper {
     //allList所有菜单
     private static Permission findChildren(Permission permission,
                                            List<Permission> allList) {
-        permission.setChildren(new ArrayList<Permission>());
+        permission.setChildren(new ArrayList<>());
         //遍历allList所有菜单数据
         //判断：当前节点id = pid是否一样，封装，递归往下找
         for (Permission it:allList) {

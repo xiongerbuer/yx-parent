@@ -21,8 +21,7 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
                 baseMapper.selectList(null);
 
         //2 转换要求数据格式
-        List<Permission> result = PermissionHelper.buildPermission(allPermissionList);
-        return result;
+        return PermissionHelper.buildPermission(allPermissionList);
     }
 
     //递归删除菜单
@@ -54,7 +53,7 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
         List<Permission> childList = baseMapper.selectList(wrapper);
 
         //递归查询是否还有子菜单，有继续递归查询
-        childList.stream().forEach(item -> {
+        childList.forEach(item -> {
             //封装菜单id到idList集合里面
             idList.add(item.getId());
             //递归

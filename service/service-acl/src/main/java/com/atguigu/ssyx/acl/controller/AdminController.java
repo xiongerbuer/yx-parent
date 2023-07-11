@@ -10,6 +10,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,13 +20,12 @@ import java.util.Map;
 @Api(tags = "用户接口")
 @RestController
 @RequestMapping("/admin/acl/user")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class AdminController {
 
-    @Autowired
     private AdminService adminService;
 
-    @Autowired
     private RoleService roleService;
 
     //为用户进行分配
@@ -38,10 +38,10 @@ public class AdminController {
     //参数有用户id 和 多个角色id
     @ApiOperation("为用户进行角色分配")
     @PostMapping("doAssign")
-    public Result doAssign(@RequestParam Long adminId,
+    public Result<Boolean> doAssign(@RequestParam Long adminId,
                            @RequestParam Long[] roleId) {
         roleService.saveAdminRole(adminId,roleId);
-        return Result.ok(null);
+        return Result.ok(true);
     }
 
 
@@ -50,7 +50,7 @@ public class AdminController {
 //    method: 'get'
     @ApiOperation("获取用户角色")
     @GetMapping("toAssign/{adminId}")
-    public Result toAssign(@PathVariable Long adminId) {
+    public Result<Map<String,Object>> toAssign(@PathVariable Long adminId) {
         //返回map集合包含两部分数据：所有角色 和 为用户分配角色列表
        Map<String,Object> map  = roleService.getRoleByAdminId(adminId);
        return Result.ok(map);
@@ -59,10 +59,10 @@ public class AdminController {
     //1 用户列表
     @ApiOperation("用户列表")
     @GetMapping("{current}/{limit}")
-    public Result list(@PathVariable Long current,
+    public Result<IPage<Admin>> list(@PathVariable Long current,
                        @PathVariable Long limit,
                        AdminQueryVo adminQueryVo) {
-        Page<Admin> pageParam = new Page<Admin>(current,limit);
+        Page<Admin> pageParam = new Page<>(current,limit);
         IPage<Admin> pageModel = adminService.selectPageUser(pageParam,adminQueryVo);
         return Result.ok(pageModel);
     }
@@ -72,7 +72,7 @@ public class AdminController {
 //    method: 'get'
     @ApiOperation("根据id查询")
     @GetMapping("get/{id}")
-    public Result get(@PathVariable Long id) {
+    public Result<Admin> get(@PathVariable Long id) {
         Admin admin = adminService.getById(id);
         return Result.ok(admin);
     }
@@ -83,7 +83,7 @@ public class AdminController {
 //    data: user
     @ApiOperation("添加用户")
     @PostMapping("save")
-    public Result save(@RequestBody Admin admin) {
+    public Result<Boolean> save(@RequestBody Admin admin) {
         //获取输入的密码
         String password = admin.getPassword();
 
@@ -94,8 +94,10 @@ public class AdminController {
         admin.setPassword(passwordMD5);
 
         //调用方法添加
-        adminService.save(admin);
-        return Result.ok(null);
+        if (adminService.save(admin)) {
+            return Result.ok(true);
+        }
+        return Result.fail(false);
     }
 
     //4 修改用户
@@ -104,9 +106,11 @@ public class AdminController {
 //    data: user
     @ApiOperation("修改用户")
     @PutMapping("update")
-    public Result update(@RequestBody Admin admin) {
-        adminService.updateById(admin);
-        return Result.ok(null);
+    public Result<Boolean> update(@RequestBody Admin admin) {
+        if (adminService.updateById(admin)) {
+            return Result.ok(true);
+        }
+        return Result.fail(false);
     }
 
     //5 id删除
@@ -114,9 +118,11 @@ public class AdminController {
 //    method: 'delete'
     @ApiOperation("根据id删除用户")
     @DeleteMapping("remove/{id}")
-    public Result remove(@PathVariable Long id) {
-        adminService.removeById(id);
-        return Result.ok(null);
+    public Result<Boolean> remove(@PathVariable Long id) {
+        if (adminService.removeById(id)) {
+            return Result.ok(true);
+        }
+        return Result.fail(false);
     }
 
     //6 批量删除
@@ -126,9 +132,11 @@ public class AdminController {
     // [1,2,3]
     @ApiOperation("批量删除")
     @DeleteMapping("batchRemove")
-    public Result batchRemove(@RequestBody List<Long> idList) {
-        adminService.removeByIds(idList);
-        return Result.ok(null);
+    public Result<Boolean> batchRemove(@RequestBody List<Long> idList) {
+        if (adminService.removeByIds(idList)) {
+            return Result.ok(true);
+        }
+        return Result.fail(false);
     }
 
 }
