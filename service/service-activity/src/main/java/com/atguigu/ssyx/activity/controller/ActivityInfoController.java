@@ -9,11 +9,14 @@ import com.atguigu.ssyx.vo.activity.ActivityRuleVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
  * <p>
@@ -24,29 +27,30 @@ import java.util.Map;
  * @since 2023-04-07
  */
 @RestController
-@RequestMapping("/admin/activity/activityInfo")
+@RequestMapping(value = "/admin/activity/activityInfo", produces = APPLICATION_JSON_VALUE)
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class ActivityInfoController {
 
-    @Autowired
     private ActivityInfoService activityInfoService;
 
     //列表
 //    url: `${api_name}/${page}/${limit}`,
 //    method: 'get'
     @GetMapping("{page}/{limit}")
-    public Result list(@PathVariable Long page,
+    @ApiOperation(value = "活动列表")
+    public Result<IPage<ActivityInfo>> list(@PathVariable Long page,
                        @PathVariable Long limit) {
         Page<ActivityInfo> pageParam = new Page<>(page,limit);
-        IPage<ActivityInfo> pageModel =
-                activityInfoService.selectPage(pageParam);
+        IPage<ActivityInfo> pageModel = activityInfoService.selectPage(pageParam);
         return Result.ok(pageModel);
     }
 
 //    url: `${api_name}/get/${id}`,
 //    method: 'get'
     @GetMapping("get/{id}")
-    public Result get(@PathVariable Long id) {
+    @ApiOperation(value = "活动详情")
+    public Result<ActivityInfo> get(@PathVariable Long id) {
         ActivityInfo activityInfo = activityInfoService.getById(id);
         activityInfo.setActivityTypeString(activityInfo.getActivityType().getComment());
         return Result.ok(activityInfo);
@@ -57,9 +61,12 @@ public class ActivityInfoController {
 //    method: 'post',
 //    data: role
     @PostMapping("save")
-    public Result save(@RequestBody ActivityInfo activityInfo) {
-        activityInfoService.save(activityInfo);
-        return Result.ok(null);
+    @ApiOperation(value = "添加活动")
+    public Result<String> save(@RequestBody ActivityInfo activityInfo) {
+        if (activityInfoService.save(activityInfo)) {
+            return Result.ok("成功添加活动。");
+        }
+        return Result.fail("添加活动失败！");
     }
 
     //营销活动规则相关接口
@@ -67,9 +74,9 @@ public class ActivityInfoController {
 //    url: `${api_name}/findActivityRuleList/${id}`,
 //    method: 'get'
     @GetMapping("findActivityRuleList/{id}")
-    public Result findActivityRuleList(@PathVariable Long id) {
-        Map<String,Object> activityRuleMap =
-                activityInfoService.findActivityRuleList(id);
+    @ApiOperation(value = "根据活动id获取活动规则数据")
+    public Result<Map<String,Object>> findActivityRuleList(@PathVariable Long id) {
+        Map<String,Object> activityRuleMap = activityInfoService.findActivityRuleList(id);
         return Result.ok(activityRuleMap);
     }
 
@@ -78,18 +85,19 @@ public class ActivityInfoController {
 //    method: 'post',
 //    data: rule
     @PostMapping("saveActivityRule")
-    public Result saveActivityRule(@RequestBody ActivityRuleVo activityRuleVo) {
+    @ApiOperation(value = "在活动里面添加规则数据")
+    public Result<Boolean> saveActivityRule(@RequestBody ActivityRuleVo activityRuleVo) {
         activityInfoService.saveActivityRule(activityRuleVo);
-        return Result.ok(null);
+        return Result.ok(true);
     }
 
     //3 根据关键字查询匹配sku信息
 //    url: `${api_name}/findSkuInfoByKeyword/${keyword}`,
 //    method: 'get'
     @GetMapping("findSkuInfoByKeyword/{keyword}")
-    public Result findSkuInfoByKeyword(@PathVariable("keyword") String keyword) {
-        List<SkuInfo> list =
-                activityInfoService.findSkuInfoByKeyword(keyword);
+    @ApiOperation(value = "根据关键字查询匹配sku信息")
+    public Result<List<SkuInfo>> findSkuInfoByKeyword(@PathVariable("keyword") String keyword) {
+        List<SkuInfo> list = activityInfoService.findSkuInfoByKeyword(keyword);
         return Result.ok(list);
     }
 
