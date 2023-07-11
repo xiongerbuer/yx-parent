@@ -1,14 +1,14 @@
 package com.atguigu.ssyx.common.result;
 
 import lombok.Getter;
+
 /**
  * 统一返回结果状态信息类
- *
  */
 @Getter
 public enum ResultCodeEnum {
 
-    SUCCESS(200,"成功"),
+    SUCCESS(200, "成功"),
     FAIL(201, "失败"),
 
     SERVICE_ERROR(2012, "服务异常"),
@@ -26,10 +26,10 @@ public enum ResultCodeEnum {
     COUPON_GET(220, "优惠券已经领取"),
     COUPON_LIMIT_GET(221, "优惠券已发放完毕"),
 
-    URL_ENCODE_ERROR( 216, "URL编码失败"),
-    ILLEGAL_CALLBACK_REQUEST_ERROR( 217, "非法回调请求"),
-    FETCH_ACCESSTOKEN_FAILD( 218, "获取accessToken失败"),
-    FETCH_USERINFO_ERROR( 219, "获取用户信息失败"),
+    URL_ENCODE_ERROR(216, "URL编码失败"),
+    ILLEGAL_CALLBACK_REQUEST_ERROR(217, "非法回调请求"),
+    FETCH_ACCESSTOKEN_FAILD(218, "获取accessToken失败"),
+    FETCH_USERINFO_ERROR(219, "获取用户信息失败"),
 
 
     SKU_LIMIT_ERROR(230, "购买个数不能大于限购个数"),
@@ -37,12 +37,11 @@ public enum ResultCodeEnum {
     REGION_NO_OPEN(240, "该区域未开通"),
     PAYMENT_WAITING(242, "订单支付中"),
     PAYMENT_SUCCESS(241, "订单支付成功"),
-    PAYMENT_FAIL(243, "订单支付失败"),
-    ;
+    PAYMENT_FAIL(243, "订单支付失败");
 
-    private Integer code;
+    private final Integer code;
 
-    private String message;
+    private final String message;
 
     private ResultCodeEnum(Integer code, String message) {
         this.code = code;
