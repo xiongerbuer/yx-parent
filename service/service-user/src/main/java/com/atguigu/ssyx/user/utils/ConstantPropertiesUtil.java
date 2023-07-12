@@ -1,9 +1,11 @@
 package com.atguigu.ssyx.user.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class ConstantPropertiesUtil implements InitializingBean {
 
@@ -20,5 +22,7 @@ public class ConstantPropertiesUtil implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         WX_OPEN_APP_ID = appId;
         WX_OPEN_APP_SECRET = appSecret;
+        log.info("appId是:{}", appId);
+        log.info("appSecret是:{}", appSecret);
     }
 }
