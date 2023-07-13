@@ -15,6 +15,7 @@ import com.atguigu.ssyx.user.utils.ConstantPropertiesUtil;
 import com.atguigu.ssyx.user.utils.HttpClientUtils;
 import com.atguigu.ssyx.vo.user.LeaderAddressVo;
 import com.atguigu.ssyx.vo.user.UserLoginVo;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @RestController
-@RequestMapping("/api/user/weixin")
+@Api(tags = {"微信登录接口"})
+@RequestMapping(value = "/api/user/weixin", produces = APPLICATION_JSON_VALUE)
 @AllArgsConstructor(onConstructor_ = @Autowired)
 public class WeiXinApiController {
 

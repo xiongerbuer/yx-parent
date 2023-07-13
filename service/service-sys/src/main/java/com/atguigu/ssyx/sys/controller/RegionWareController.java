@@ -9,8 +9,11 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
  * <p>
@@ -20,22 +23,22 @@ import org.springframework.web.bind.annotation.*;
  * @author atguigu
  * @since 2023-04-03
  */
-@Api(tags = "开通区域接口")
 @RestController
-@RequestMapping("/admin/sys/regionWare")
+@Api(tags = "开通区域接口")
+@RequestMapping(value = "/admin/sys/regionWare", produces = APPLICATION_JSON_VALUE)
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class RegionWareController {
 
-    @Autowired
     private RegionWareService regionWareService;
 
     //开通区域列表
 //    url: `${api_name}/${page}/${limit}`,
 //    method: 'get',
 //    params: searchObj
-    @ApiOperation("开通区域列表")
+    @ApiOperation(value = "开通区域列表")
     @GetMapping("{page}/{limit}")
-    public Result list(@PathVariable Long page,
+    public Result<IPage<RegionWare>> list(@PathVariable Long page,
                        @PathVariable Long limit,
                        RegionWareQueryVo regionWareQueryVo) {
         Page<RegionWare> pageParam = new Page<>(page,limit);
@@ -47,32 +50,34 @@ public class RegionWareController {
 //    url: `${api_name}/save`,
 //    method: 'post',
 //    data: role
-    @ApiOperation("添加开通区域")
+    @ApiOperation(value = "添加开通区域")
     @PostMapping("save")
-    public Result addRegionWare(@RequestBody RegionWare regionWare) {
+    public Result<String> addRegionWare(@RequestBody RegionWare regionWare) {
         regionWareService.saveRegionWare(regionWare);
-        return Result.ok(null);
+        return Result.ok("添加成功。");
     }
 
     //删除开通区域
 //    url: `${api_name}/remove/${id}`,
 //    method: 'delete'
-    @ApiOperation("删除开通区域")
+    @ApiOperation(value = "删除开通区域")
     @DeleteMapping("remove/{id}")
-    public Result remove(@PathVariable Long id) {
-        regionWareService.removeById(id);
-        return Result.ok(null);
+    public Result<String> remove(@PathVariable Long id) {
+        if (regionWareService.removeById(id)) {
+            return Result.ok("删除成功。");
+        }
+        return Result.fail("删除失败！");
     }
 
     //取消开通区域
 //    url: `${api_name}/updateStatus/${id}/${status}`,
 //    method: 'post'
-    @ApiOperation("取消开通区域")
+    @ApiOperation(value = "取消开通区域")
     @PostMapping("updateStatus/{id}/{status}")
-    public Result updateStatus(@PathVariable Long id,
+    public Result<String> updateStatus(@PathVariable Long id,
                                @PathVariable Integer status) {
         regionWareService.updateStatus(id,status);
-        return Result.ok(null);
+        return Result.ok("取消成功。");
     }
 }
 
