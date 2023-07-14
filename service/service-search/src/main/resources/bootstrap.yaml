@@ -14,3 +14,5 @@ spring:
         file-extension: yaml
         extension-configs:
           - data_id: yx-search.yaml
+          - data_id: yx-rabbitmq.yaml
+          - data_id: yx-redis.yaml

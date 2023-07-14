@@ -14,3 +14,4 @@ spring:
         file-extension: yaml
         extension-configs:
           - data_id: yx-acl.yaml
+          - data_id: yx-redis.yaml
