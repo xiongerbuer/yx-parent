@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: yx-payment
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${discovery_addr:192.168.10.194:8848}
+        namespace: ${discovery_space:dev}
+      config:
+        server-addr: ${config_addr:192.168.10.194:8848}
+        namespace: ${config_space:dev}
+        file-extension: yaml
+        extension-configs:
+          - data_id: yx-payment.yaml
