@@ -16,7 +16,7 @@ import org.springframework.util.StringUtils;
  * 商品三级分类 服务实现类
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-04
  */
 @Service

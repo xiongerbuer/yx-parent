@@ -39,7 +39,7 @@ import java.util.List;
  * sku信息 服务实现类
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-04
  */
 @Service

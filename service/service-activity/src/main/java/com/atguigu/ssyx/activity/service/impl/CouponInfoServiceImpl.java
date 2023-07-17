@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
  * 优惠券信息 服务实现类
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-07
  */
 @Slf4j

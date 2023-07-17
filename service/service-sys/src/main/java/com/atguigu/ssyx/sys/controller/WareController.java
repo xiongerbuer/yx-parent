@@ -23,7 +23,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  * 仓库表 前端控制器
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-03
  */
 @RestController

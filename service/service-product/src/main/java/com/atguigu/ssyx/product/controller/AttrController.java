@@ -15,7 +15,7 @@ import java.util.List;
  * 商品属性 前端控制器
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-04
  */
 @RestController

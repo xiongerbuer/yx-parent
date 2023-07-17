@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Param;
  * sku信息 Mapper 接口
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-04
  */
 public interface SkuInfoMapper extends BaseMapper<SkuInfo> {

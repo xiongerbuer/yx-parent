@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 城市仓库关联表 Mapper 接口
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-03
  */
 public interface RegionWareMapper extends BaseMapper<RegionWare> {

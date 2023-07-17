@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 仓库表 Mapper 接口
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-03
  */
 public interface WareMapper extends BaseMapper<Ware> {

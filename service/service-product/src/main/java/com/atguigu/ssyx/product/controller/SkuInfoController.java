@@ -19,7 +19,7 @@ import java.util.List;
  * sku信息 前端控制器
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-04
  */
 @RestController

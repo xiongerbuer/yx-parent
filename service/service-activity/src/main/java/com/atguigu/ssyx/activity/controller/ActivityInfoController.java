@@ -8,6 +8,7 @@ import com.atguigu.ssyx.model.product.SkuInfo;
 import com.atguigu.ssyx.vo.activity.ActivityRuleVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +24,11 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  * 活动表 前端控制器
  * </p>
  *
- * @author atguigu
+ * @author xiongyou
  * @since 2023-04-07
  */
 @RestController
+@Api(tags = "活动相关信息接口")
 @RequestMapping(value = "/admin/activity/activityInfo", produces = APPLICATION_JSON_VALUE)
 @AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
@@ -40,13 +42,13 @@ public class ActivityInfoController {
     @GetMapping("{page}/{limit}")
     @ApiOperation(value = "活动列表")
     public Result<IPage<ActivityInfo>> list(@PathVariable Long page,
-                       @PathVariable Long limit) {
-        Page<ActivityInfo> pageParam = new Page<>(page,limit);
+                                            @PathVariable Long limit) {
+        Page<ActivityInfo> pageParam = new Page<>(page, limit);
         IPage<ActivityInfo> pageModel = activityInfoService.selectPage(pageParam);
         return Result.ok(pageModel);
     }
 
-//    url: `${api_name}/get/${id}`,
+    //    url: `${api_name}/get/${id}`,
 //    method: 'get'
     @GetMapping("get/{id}")
     @ApiOperation(value = "活动详情")
@@ -75,8 +77,8 @@ public class ActivityInfoController {
 //    method: 'get'
     @GetMapping("findActivityRuleList/{id}")
     @ApiOperation(value = "根据活动id获取活动规则数据")
-    public Result<Map<String,Object>> findActivityRuleList(@PathVariable Long id) {
-        Map<String,Object> activityRuleMap = activityInfoService.findActivityRuleList(id);
+    public Result<Map<String, Object>> findActivityRuleList(@PathVariable Long id) {
+        Map<String, Object> activityRuleMap = activityInfoService.findActivityRuleList(id);
         return Result.ok(activityRuleMap);
     }
 
