@@ -34,7 +34,7 @@ public class CategoryController {
 //    url: `${api_name}/${page}/${limit}`,
 //    method: 'get',
 //    params: searchObj
-    @ApiOperation("商品分类列表")
+    @ApiOperation(value = "商品分类列表")
     @GetMapping("{page}/{limit}")
     public Result list(@PathVariable Long page,
                        @PathVariable Long limit,
@@ -82,7 +82,7 @@ public class CategoryController {
     //      url: `${api_name}/findAllList`,
     //      method: 'get'
     //查询所有商品分类
-    @ApiOperation("查询所有商品分类")
+    @ApiOperation(value = "查询所有商品分类")
     @GetMapping("findAllList")
     public Result findAllList() {
         List<Category> list = categoryService.list();

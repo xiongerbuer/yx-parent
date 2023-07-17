@@ -22,7 +22,7 @@ public interface ActivityFeignClient {
     public OrderConfirmVo findCartActivityAndCoupon(@RequestBody List<CartInfo> cartInfoList,
                                                     @PathVariable("userId") Long userId);
 
-    @ApiOperation("根据skuID获取营销数据和优惠卷")
+    @ApiOperation(value = "根据skuID获取营销数据和优惠卷")
     @GetMapping("/api/activity/inner/findActivityAndCoupon/{skuId}/{userId}")
     public Map<String,Object> findActivityAndCoupon(@PathVariable("skuId") Long skuId,
                                                     @PathVariable("userId") Long userId);

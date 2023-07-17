@@ -3,6 +3,7 @@ package com.atguigu.ssyx.cart.receiver;
 import com.atguigu.ssyx.cart.service.CartInfoService;
 import com.atguigu.ssyx.mq.constant.MqConst;
 import com.rabbitmq.client.Channel;
+import lombok.AllArgsConstructor;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Exchange;
@@ -15,9 +16,9 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 @Component
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class CartReceiver {
 
-    @Autowired
     private CartInfoService cartInfoService;
 
     @RabbitListener(bindings = @QueueBinding(

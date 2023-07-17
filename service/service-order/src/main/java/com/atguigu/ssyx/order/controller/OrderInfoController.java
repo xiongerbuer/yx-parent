@@ -66,21 +66,21 @@ public class OrderInfoController {
         return Result.ok(ResultCodeEnum.URL_ENCODE_ERROR);
     }
 
-    @ApiOperation("确认订单")
+    @ApiOperation(value = "确认订单")
     @GetMapping("auth/confirmOrder")
     public Result confirm() {
         OrderConfirmVo orderConfirmVo = orderInfoService.confirmOrder();
         return Result.ok(orderConfirmVo);
     }
 
-    @ApiOperation("生成订单")
+    @ApiOperation(value = "生成订单")
     @PostMapping("auth/submitOrder")
     public Result submitOrder(@RequestBody OrderSubmitVo orderParamVo) {
         Long orderId = orderInfoService.submitOrder(orderParamVo);
         return Result.ok(orderId);
     }
 
-    @ApiOperation("获取订单详情")
+    @ApiOperation(value = "获取订单详情")
     @GetMapping("auth/getOrderInfoById/{orderId}")
     public Result getOrderInfoById(@PathVariable("orderId") Long orderId){
         OrderInfo orderInfo = orderInfoService.getOrderInfoById(orderId);

@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @RestController
-@RequestMapping("/admin/acl/permission")
+@RequestMapping(value = "/admin/acl/permission", produces = APPLICATION_JSON_VALUE)
 @Api(tags = "菜单管理")
 @AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin //跨域
@@ -23,7 +25,7 @@ public class PermissionController {
     //查询所有菜单
 //    url: `${api_name}`,
 //    method: 'get'
-    @ApiOperation("查询所有菜单")
+    @ApiOperation(value = "查询所有菜单")
     @GetMapping
     public Result list() {
         List<Permission> list = permissionService.queryAllPermission();
@@ -34,7 +36,7 @@ public class PermissionController {
 //    url: `${api_name}/save`,
 //    method: "post",
 //    data: permission
-    @ApiOperation("添加菜单")
+    @ApiOperation(value = "添加菜单")
     @PostMapping("save")
     public Result save(@RequestBody Permission permission) {
         permissionService.save(permission);
@@ -45,7 +47,7 @@ public class PermissionController {
 //    url: `${api_name}/update`,
 //    method: "put",
 //    data: permission
-    @ApiOperation("修改菜单")
+    @ApiOperation(value = "修改菜单")
     @PutMapping("update")
     public Result update(@RequestBody Permission permission) {
         permissionService.updateById(permission);
@@ -55,7 +57,7 @@ public class PermissionController {
     //递归删除菜单
 //    url: `${api_name}/remove/${id}`,
 //    method: "delete"
-    @ApiOperation("递归删除菜单")
+    @ApiOperation(value = "递归删除菜单")
     @DeleteMapping("remove/{id}")
     public Result remove(@PathVariable Long id) {
         permissionService.removeChildById(id);

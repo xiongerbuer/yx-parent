@@ -32,7 +32,7 @@ public class AttrGroupController {
 //    url: `${api_name}/${page}/${limit}`,
 //    method: 'get',
 //    params: searchObj
-    @ApiOperation("平台属性分组列表")
+    @ApiOperation(value = "平台属性分组列表")
     @GetMapping("{page}/{limit}")
     public Result list(@PathVariable Long page,
                        @PathVariable Long limit,
@@ -45,7 +45,7 @@ public class AttrGroupController {
     //查询所有平台属性分组列表
 //    url: `${api_name}/findAllList`,
 //    method: 'get'
-    @ApiOperation("查询所有平台属性分组列表")
+    @ApiOperation(value = "查询所有平台属性分组列表")
     @GetMapping("findAllList")
     public Result findAllList() {
         List<AttrGroup> list = attrGroupService.findAllListAttrGroup();

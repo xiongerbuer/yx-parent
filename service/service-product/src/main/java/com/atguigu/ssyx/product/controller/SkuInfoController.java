@@ -34,7 +34,7 @@ public class SkuInfoController {
 //    url: `${api_name}/${page}/${limit}`,
 //    method: 'get',
 //    params: searchObj
-    @ApiOperation("sku列表")
+    @ApiOperation(value = "sku列表")
     @GetMapping("{page}/{limit}")
     public Result list(@PathVariable Long page,
                        @PathVariable Long limit,
@@ -49,7 +49,7 @@ public class SkuInfoController {
 //    url: `${api_name}/save`,
 //    method: 'post',
 //    data: role
-    @ApiOperation("添加商品sku信息")
+    @ApiOperation(value = "添加商品sku信息")
     @PostMapping("save")
     public Result save(@RequestBody SkuInfoVo skuInfoVo) {
         skuInfoService.saveSkuInfo(skuInfoVo);
@@ -58,7 +58,7 @@ public class SkuInfoController {
 
 //    url: `${api_name}/get/${id}`,
 //    method: 'get'
-    @ApiOperation("获取sku信息")
+    @ApiOperation(value = "获取sku信息")
     @GetMapping("get/{id}")
     public Result get(@PathVariable Long id) {
         SkuInfoVo skuInfoVo = skuInfoService.getSkuInfo(id);
@@ -68,7 +68,7 @@ public class SkuInfoController {
 //    url: `${api_name}/update`,
 //    method: 'put',
 //    data: role
-    @ApiOperation("修改sku")
+    @ApiOperation(value = "修改sku")
     @PutMapping("update")
     public Result update(@RequestBody SkuInfoVo skuInfoVo) {
         skuInfoService.updateSkuInfo(skuInfoVo);
@@ -91,7 +91,7 @@ public class SkuInfoController {
 
 //    url: `${api_name}/check/${id}/${status}`,
 //    method: 'get'
-    @ApiOperation("商品审核")
+    @ApiOperation(value = "商品审核")
     @GetMapping("check/{skuId}/{status}")
     public Result check(@PathVariable Long skuId,
                         @PathVariable Integer status) {
@@ -101,7 +101,7 @@ public class SkuInfoController {
 
 //    url: `${api_name}/publish/${id}/${status}`,
 //    method: 'get'
-    @ApiOperation("商品上下架")
+    @ApiOperation(value = "商品上下架")
     @GetMapping("publish/{skuId}/{status}")
     public Result publish(@PathVariable Long skuId,
                           @PathVariable Integer status) {

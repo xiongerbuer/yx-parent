@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @Api(tags = "用户接口")
 @RestController
-@RequestMapping("/admin/acl/user")
+@RequestMapping(value = "/admin/acl/user", produces = APPLICATION_JSON_VALUE)
 @AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class AdminController {
@@ -36,7 +38,7 @@ public class AdminController {
 //        roleId
 //    }
     //参数有用户id 和 多个角色id
-    @ApiOperation("为用户进行角色分配")
+    @ApiOperation(value = "为用户进行角色分配")
     @PostMapping("doAssign")
     public Result<Boolean> doAssign(@RequestParam Long adminId,
                            @RequestParam Long[] roleId) {
@@ -48,7 +50,7 @@ public class AdminController {
     //获取所有角色，和根据用户id查询用户分配角色列表
 //    url: `${api_name}/toAssign/${adminId}`,
 //    method: 'get'
-    @ApiOperation("获取用户角色")
+    @ApiOperation(value = "获取用户角色")
     @GetMapping("toAssign/{adminId}")
     public Result<Map<String,Object>> toAssign(@PathVariable Long adminId) {
         //返回map集合包含两部分数据：所有角色 和 为用户分配角色列表
@@ -57,7 +59,7 @@ public class AdminController {
     }
 
     //1 用户列表
-    @ApiOperation("用户列表")
+    @ApiOperation(value = "用户列表")
     @GetMapping("{current}/{limit}")
     public Result<IPage<Admin>> list(@PathVariable Long current,
                        @PathVariable Long limit,
@@ -70,7 +72,7 @@ public class AdminController {
     //2 id查询用户
 //    url: `${api_name}/get/${id}`,
 //    method: 'get'
-    @ApiOperation("根据id查询")
+    @ApiOperation(value = "根据id查询")
     @GetMapping("get/{id}")
     public Result<Admin> get(@PathVariable Long id) {
         Admin admin = adminService.getById(id);
@@ -81,7 +83,7 @@ public class AdminController {
 //    url: `${api_name}/save`,
 //    method: 'post',
 //    data: user
-    @ApiOperation("添加用户")
+    @ApiOperation(value = "添加用户")
     @PostMapping("save")
     public Result<Boolean> save(@RequestBody Admin admin) {
         //获取输入的密码
@@ -104,7 +106,7 @@ public class AdminController {
 //    url: `${api_name}/update`,
 //    method: 'put',
 //    data: user
-    @ApiOperation("修改用户")
+    @ApiOperation(value = "修改用户")
     @PutMapping("update")
     public Result<Boolean> update(@RequestBody Admin admin) {
         if (adminService.updateById(admin)) {
@@ -116,7 +118,7 @@ public class AdminController {
     //5 id删除
 //    url: `${api_name}/remove/${id}`,
 //    method: 'delete'
-    @ApiOperation("根据id删除用户")
+    @ApiOperation(value = "根据id删除用户")
     @DeleteMapping("remove/{id}")
     public Result<Boolean> remove(@PathVariable Long id) {
         if (adminService.removeById(id)) {
@@ -130,7 +132,7 @@ public class AdminController {
 //    method: 'delete',
 //    data: ids
     // [1,2,3]
-    @ApiOperation("批量删除")
+    @ApiOperation(value = "批量删除")
     @DeleteMapping("batchRemove")
     public Result<Boolean> batchRemove(@RequestBody List<Long> idList) {
         if (adminService.removeByIds(idList)) {

@@ -30,7 +30,7 @@ public class AttrController {
     //根据平台属性分组id查询
 //    url: `${api_name}/${groupId}`,
 //    method: 'get'
-    @ApiOperation("根据平台属性分组id查询")
+    @ApiOperation(value = "根据平台属性分组id查询")
     @GetMapping("{groupId}")
     public Result list(@PathVariable Long groupId) {
         List<Attr> list = attrService.getAttrListByGroupId(groupId);

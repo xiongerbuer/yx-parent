@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @Api(tags = "角色接口")
 @RestController
-@RequestMapping("/admin/acl/role")
+@RequestMapping(value = "/admin/acl/role", produces = APPLICATION_JSON_VALUE)
 @AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin //跨域
 public class RoleController {
@@ -25,7 +27,7 @@ public class RoleController {
     private RoleService roleService;
 
     //1 角色列表（条件分页查询）
-    @ApiOperation("角色条件分页查询")
+    @ApiOperation(value = "角色条件分页查询")
     @GetMapping("{current}/{limit}")
     public Result<IPage<Role>> pageList(@PathVariable Long current,
                            @PathVariable Long limit,
@@ -42,7 +44,7 @@ public class RoleController {
     }
 
     //2 根据id查询角色
-    @ApiOperation("根据id查询角色")
+    @ApiOperation(value = "根据id查询角色")
     @GetMapping("get/{id}")
     public Result<Role> get(@PathVariable Long id) {
         Role role = roleService.getById(id);
@@ -50,7 +52,7 @@ public class RoleController {
     }
 
     //3 添加角色
-    @ApiOperation("添加角色")
+    @ApiOperation(value = "添加角色")
     @PostMapping("save")
     public Result<Boolean> save(@RequestBody Role role) {
         if(roleService.save(role)) {
@@ -61,7 +63,7 @@ public class RoleController {
     }
 
     //4 修改角色
-    @ApiOperation("修改角色")
+    @ApiOperation(value = "修改角色")
     @PutMapping("update")
     public Result<Boolean> update(@RequestBody Role role) {
         if(roleService.updateById(role)) {
@@ -72,7 +74,7 @@ public class RoleController {
     }
 
     //5 根据id删除角色
-    @ApiOperation("根据id删除角色")
+    @ApiOperation(value = "根据id删除角色")
     @DeleteMapping("remove/{id}")
     public Result<Boolean> remove(@PathVariable Long id) {
         if(roleService.removeById(id)) {
@@ -84,7 +86,7 @@ public class RoleController {
 
     //6 批量删除角色
     // json数组[1,2,3]  --- java的list集合
-    @ApiOperation("批量删除角色")
+    @ApiOperation(value = "批量删除角色")
     @DeleteMapping("batchRemove")
     public Result<Boolean> batchRemove(@RequestBody List<Long> idList) {
         if(roleService.removeByIds(idList)) {

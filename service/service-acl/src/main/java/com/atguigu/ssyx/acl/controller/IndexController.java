@@ -9,15 +9,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Handler;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @Api(tags = "登录接口")
 @RestController
-@RequestMapping("/admin/acl/index")
+@RequestMapping(value = "/admin/acl/index", produces = APPLICATION_JSON_VALUE)
 //@CrossOrigin //跨域
 public class IndexController {
 
     //   http://localhost:8201/admin/acl/index/login
     //1 login登录
-    @ApiOperation("登录")
+    @ApiOperation(value = "登录")
     @PostMapping("login")
     public Result login() {
         //返回token值
@@ -29,7 +31,7 @@ public class IndexController {
 //    url: '/admin/acl/index/info',
 //    method: 'get',
     //2 getInfo 获取信息
-    @ApiOperation("获取信息")
+    @ApiOperation(value = "获取信息")
     @GetMapping("info")
     public Result info() {
         Map<String,String> map = new HashMap<>();
@@ -41,7 +43,7 @@ public class IndexController {
 //    url: '/admin/acl/index/logout',
 //    method: 'post'
     //3 logout 退出
-    @ApiOperation("退出")
+    @ApiOperation(value = "退出")
     @PostMapping("logout")
     public Result logout() {
         return Result.ok(null);

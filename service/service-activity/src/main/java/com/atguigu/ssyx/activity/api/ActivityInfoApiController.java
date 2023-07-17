@@ -17,9 +17,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @Slf4j
 @RestController
-@RequestMapping("/api/activity")
+@RequestMapping(value = "/api/activity", produces = APPLICATION_JSON_VALUE)
 @AllArgsConstructor(onConstructor_ = @Autowired)
 public class ActivityInfoApiController {
 

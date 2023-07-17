@@ -21,7 +21,7 @@ public class FileUploadController {
     private FileUploadService fileUploadService;
 
     //图片上传的方法
-    @ApiOperation("图片上传")
+    @ApiOperation(value = "图片上传")
     @PostMapping("fileUpload")
     public Result fileUpload(MultipartFile file) {
         String url = fileUploadService.uploadFile(file);
