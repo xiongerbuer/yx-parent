@@ -32,7 +32,7 @@
         <jwt.version>0.7.0</jwt.version>
         <fastjson.version>2.0.0</fastjson.version>
         <httpclient.version>4.5.13</httpclient.version>
-        <easyexcel.version>3.1.0</easyexcel.version>
+        <easyexcel.version>3.3.1</easyexcel.version>
         <aliyun.version>4.1.1</aliyun.version>
         <oss.version>3.9.1</oss.version>
         <knife4j.version>2.0.8</knife4j.version>
@@ -116,6 +116,11 @@
                 <artifactId>easyexcel</artifactId>
                 <version>${easyexcel.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.pig4cloud.excel</groupId>
+                <artifactId>excel-spring-boot-starter</artifactId>
+                <version>1.2.7</version>
+            </dependency>
             <!-- 阿里云 Java SDK 的核心库 -->
             <dependency>
                 <groupId>com.aliyun</groupId>
@@ -133,6 +138,11 @@
                 <groupId>com.xuxueli</groupId>
                 <artifactId>xxl-job-core</artifactId>
                 <version>${xxl-job.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>8.5.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

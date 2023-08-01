@@ -1,0 +1,81 @@
+server:
+  port: 8999
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  redis:
+    host: 192.168.10.85
+    #Redis服务器连接端口
+    port: 6379
+    #Redis数据库索引（默认为0）
+    database: 0
+    timeout: 1000
+    #    cluster:
+    #      nodes: 192.168.10.85:6379
+    #      max-redirects: 3
+    #    lettuce:
+    #      pool:
+    #        max-active: 8
+    #        max-wait: -1
+    #        max-idle: 8
+    #        min-idle: 8
+    password: kRP3CI8AZMQjESRaHAyHqFlTT23rB152H44ZSbiAFU9qBZ0Mf1BSscN6QAxdle7b
+  minio:
+    url: https://minio.gstonplat.com
+    bucket: gst-public
+    access-key: admin
+    secret-key: 12345678
+    region: cn-sz-1
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  profiles:
+    active: dev
+  application:
+    name: gst-sale-excel
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${discovery_addr:192.168.10.90:8848}
+        namespace: ${discovery_space:gst-local-dev}
+      config:
+        server-addr: ${config_addr:192.168.10.90:8848}
+        namespace: ${config_space:gst-local-dev}
+        file-extension: yaml
+        extension-configs:
+          - data_id: gst-redis.yaml
+          - data_id: gst-third-party.yaml
+          - data_id: gst-kafka.yaml
+          - data_id: gst-sale-excel.yaml
+          - data_id: gst-flyway.yaml
+          - data_id: gst-logging.yaml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+swagger:
+  enable: true
+  base-package: com.isiiot.sale.excel
+  api-pre-path: /gst/sale-excel
+  ignore-param-class:
+    - com.isiiot.apollo.base.http.UserContext
+    - com.isiiot.sale.excel.model.excel.Logistics
+    - com.isiiot.sale.excel.model.excel.Receivables
+    - com.isiiot.sale.excel.model.excel.SaleOrder
+    - com.isiiot.sale.excel.model.excel.SalesOut
+    - com.isiiot.sale.excel.model.excel.Waybill
+
+datasource:
+  mysql:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: vpsfr1iLg3
+    jdbc-url: jdbc:mysql://192.168.10.84:41609/gst-sale-excel?characterEncoding=utf-8&amp&serverTimezone=GMT%2B8&amp&useSSL=false&allowPublicKeyRetrieval=true
+  clickhouse:
+    driver-class-name: com.clickhouse.jdbc.ClickHouseDriver
+    username: default
+    password: 12345678
+    jdbc-url: jdbc:ch:http://192.168.10.82:28123/sale_excel
