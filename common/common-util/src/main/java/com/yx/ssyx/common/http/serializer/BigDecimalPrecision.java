@@ -1,0 +1,12 @@
+package com.yx.ssyx.common.http.serializer;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface BigDecimalPrecision {
+    int scale() default 4;
+}

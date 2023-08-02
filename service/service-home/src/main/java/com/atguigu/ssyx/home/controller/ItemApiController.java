@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.home.controller;
 
-import com.atguigu.ssyx.common.auth.AuthContextHolder;
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.auth.AuthContextHolder;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.home.service.ItemService;
 import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;

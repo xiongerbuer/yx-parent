@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.payment.service.impl;
 
-import com.atguigu.ssyx.common.exception.SsyxException;
-import com.atguigu.ssyx.common.result.ResultCodeEnum;
+import com.yx.ssyx.common.exception.SsyxException;
+import com.yx.ssyx.common.result.ResultCodeEnum;
 import com.atguigu.ssyx.enums.PaymentStatus;
 import com.atguigu.ssyx.enums.PaymentType;
 import com.atguigu.ssyx.model.order.OrderInfo;

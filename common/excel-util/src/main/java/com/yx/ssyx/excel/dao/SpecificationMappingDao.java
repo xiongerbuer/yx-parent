@@ -1,7 +1,7 @@
 package com.yx.ssyx.excel.dao;
 
 
-import com.atguigu.ssyx.common.jpa.BaseJpaRepository;
+import com.yx.ssyx.common.jpa.BaseJpaRepository;
 import com.yx.ssyx.excel.model.mysql.SpecificationMapping;
 
 import java.util.List;

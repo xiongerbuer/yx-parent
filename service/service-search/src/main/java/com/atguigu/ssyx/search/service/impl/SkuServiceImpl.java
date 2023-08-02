@@ -2,7 +2,7 @@ package com.atguigu.ssyx.search.service.impl;
 
 import com.atguigu.ssyx.activity.client.ActivityFeignClient;
 import com.atguigu.ssyx.client.product.ProductFeignClient;
-import com.atguigu.ssyx.common.auth.AuthContextHolder;
+import com.yx.ssyx.common.auth.AuthContextHolder;
 import com.atguigu.ssyx.enums.SkuType;
 import com.atguigu.ssyx.model.product.Category;
 import com.atguigu.ssyx.model.product.SkuInfo;

@@ -2,16 +2,14 @@ package com.atguigu.ssyx.cart.service.impl;
 
 import com.atguigu.ssyx.cart.service.CartInfoService;
 import com.atguigu.ssyx.client.product.ProductFeignClient;
-import com.atguigu.ssyx.common.constant.RedisConst;
-import com.atguigu.ssyx.common.exception.SsyxException;
-import com.atguigu.ssyx.common.result.ResultCodeEnum;
+import com.yx.ssyx.common.constant.RedisConst;
+import com.yx.ssyx.common.exception.SsyxException;
+import com.yx.ssyx.common.result.ResultCodeEnum;
 import com.atguigu.ssyx.enums.SkuType;
 import com.atguigu.ssyx.model.order.CartInfo;
 import com.atguigu.ssyx.model.product.SkuInfo;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.units.qual.A;
-import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -19,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;

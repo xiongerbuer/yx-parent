@@ -2,7 +2,7 @@ package com.atguigu.ssyx.activity.controller;
 
 
 import com.atguigu.ssyx.activity.service.CouponInfoService;
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.activity.CouponInfo;
 import com.atguigu.ssyx.vo.activity.CouponRuleVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;

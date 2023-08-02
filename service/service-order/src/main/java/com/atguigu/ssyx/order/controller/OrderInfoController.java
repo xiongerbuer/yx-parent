@@ -1,9 +1,9 @@
 package com.atguigu.ssyx.order.controller;
 
 
-import com.atguigu.ssyx.common.auth.AuthContextHolder;
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.common.result.ResultCodeEnum;
+import com.yx.ssyx.common.auth.AuthContextHolder;
+import com.yx.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.ResultCodeEnum;
 import com.atguigu.ssyx.model.order.OrderInfo;
 import com.atguigu.ssyx.order.service.OrderInfoService;
 import com.atguigu.ssyx.vo.order.OrderConfirmVo;

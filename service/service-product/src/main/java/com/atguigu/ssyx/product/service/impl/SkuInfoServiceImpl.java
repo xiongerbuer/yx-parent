@@ -1,8 +1,8 @@
 package com.atguigu.ssyx.product.service.impl;
 
-import com.atguigu.ssyx.common.constant.RedisConst;
-import com.atguigu.ssyx.common.exception.SsyxException;
-import com.atguigu.ssyx.common.result.ResultCodeEnum;
+import com.yx.ssyx.common.constant.RedisConst;
+import com.yx.ssyx.common.exception.SsyxException;
+import com.yx.ssyx.common.result.ResultCodeEnum;
 import com.atguigu.ssyx.model.product.SkuAttrValue;
 import com.atguigu.ssyx.model.product.SkuImage;
 import com.atguigu.ssyx.model.product.SkuInfo;

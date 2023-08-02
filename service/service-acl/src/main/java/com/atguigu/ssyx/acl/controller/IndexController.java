@@ -1,13 +1,12 @@
 package com.atguigu.ssyx.acl.controller;
 
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Handler;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 

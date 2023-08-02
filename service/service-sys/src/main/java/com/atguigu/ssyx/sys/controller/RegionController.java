@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.sys.controller;
 
 
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.sys.Region;
 import com.atguigu.ssyx.sys.service.RegionService;
 import io.swagger.annotations.Api;

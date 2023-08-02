@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.product.controller;
 
 
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.product.AttrGroup;
 import com.atguigu.ssyx.product.service.AttrGroupService;
 import com.atguigu.ssyx.vo.product.AttrGroupQueryVo;

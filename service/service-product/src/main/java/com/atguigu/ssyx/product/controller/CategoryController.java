@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.product.controller;
 
 
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.product.Category;
 import com.atguigu.ssyx.product.service.CategoryService;
 import com.atguigu.ssyx.vo.product.CategoryQueryVo;
@@ -11,7 +11,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.management.relation.RelationSupport;
 import java.util.List;
 
 /**

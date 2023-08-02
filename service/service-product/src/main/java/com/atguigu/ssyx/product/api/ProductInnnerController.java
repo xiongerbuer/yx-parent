@@ -1,6 +1,5 @@
 package com.atguigu.ssyx.product.api;
 
-import com.atguigu.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.product.Category;
 import com.atguigu.ssyx.model.product.SkuInfo;
 import com.atguigu.ssyx.product.service.CategoryService;

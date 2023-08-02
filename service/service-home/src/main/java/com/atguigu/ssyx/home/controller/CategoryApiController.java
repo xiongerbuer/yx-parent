@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.home.controller;
 
 import com.atguigu.ssyx.client.product.ProductFeignClient;
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.product.Category;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

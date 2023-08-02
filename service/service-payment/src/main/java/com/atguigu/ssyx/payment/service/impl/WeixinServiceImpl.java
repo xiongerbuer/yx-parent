@@ -1,8 +1,7 @@
 package com.atguigu.ssyx.payment.service.impl;
 
-import com.atguigu.ssyx.common.constant.RedisConst;
+import com.yx.ssyx.common.constant.RedisConst;
 import com.atguigu.ssyx.model.order.PaymentInfo;
-import com.atguigu.ssyx.order.client.OrderFeignClient;
 import com.atguigu.ssyx.payment.service.PaymentInfoService;
 import com.atguigu.ssyx.payment.service.WeixinService;
 import com.atguigu.ssyx.payment.utils.ConstantPropertiesUtils;

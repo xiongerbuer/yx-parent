@@ -1,6 +1,6 @@
 package com.yx.ssyx.excel.dao;
 
-import com.atguigu.ssyx.common.jpa.BaseJpaRepository;
+import com.yx.ssyx.common.jpa.BaseJpaRepository;
 import com.yx.ssyx.excel.model.mysql.ExcelImportStatus;
 import com.yx.ssyx.excel.model.mysql.ImportLog;
 import io.swagger.annotations.ApiParam;

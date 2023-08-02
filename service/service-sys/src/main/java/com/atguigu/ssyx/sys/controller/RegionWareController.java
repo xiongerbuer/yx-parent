@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.sys.controller;
 
 
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.sys.RegionWare;
 import com.atguigu.ssyx.sys.service.RegionWareService;
 import com.atguigu.ssyx.vo.sys.RegionWareQueryVo;

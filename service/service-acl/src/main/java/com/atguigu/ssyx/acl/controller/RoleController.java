@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.acl.controller;
 
 import com.atguigu.ssyx.acl.service.RoleService;
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.acl.Role;
 import com.atguigu.ssyx.vo.acl.RoleQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;

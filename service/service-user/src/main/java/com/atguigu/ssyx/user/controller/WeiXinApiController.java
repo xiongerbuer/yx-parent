@@ -2,12 +2,12 @@ package com.atguigu.ssyx.user.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.atguigu.ssyx.common.auth.AuthContextHolder;
-import com.atguigu.ssyx.common.constant.RedisConst;
-import com.atguigu.ssyx.common.exception.SsyxException;
-import com.atguigu.ssyx.common.result.Result;
-import com.atguigu.ssyx.common.result.ResultCodeEnum;
-import com.atguigu.ssyx.common.utils.JwtHelper;
+import com.yx.ssyx.common.auth.AuthContextHolder;
+import com.yx.ssyx.common.constant.RedisConst;
+import com.yx.ssyx.common.exception.SsyxException;
+import com.yx.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.ResultCodeEnum;
+import com.yx.ssyx.common.utils.JwtHelper;
 import com.atguigu.ssyx.enums.UserType;
 import com.atguigu.ssyx.enums.user.User;
 import com.atguigu.ssyx.user.service.UserService;

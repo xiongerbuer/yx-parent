@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.sys.service.impl;
 
-import com.atguigu.ssyx.common.exception.SsyxException;
-import com.atguigu.ssyx.common.result.ResultCodeEnum;
+import com.yx.ssyx.common.exception.SsyxException;
+import com.yx.ssyx.common.result.ResultCodeEnum;
 import com.atguigu.ssyx.model.sys.RegionWare;
 import com.atguigu.ssyx.sys.mapper.RegionWareMapper;
 import com.atguigu.ssyx.sys.service.RegionWareService;

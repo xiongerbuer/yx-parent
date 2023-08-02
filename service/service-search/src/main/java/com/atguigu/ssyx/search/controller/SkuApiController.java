@@ -1,6 +1,6 @@
 package com.atguigu.ssyx.search.controller;
 
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.search.SkuEs;
 import com.atguigu.ssyx.search.service.SkuService;
 import com.atguigu.ssyx.vo.search.SkuEsQueryVo;

@@ -2,7 +2,7 @@ package com.atguigu.ssyx.activity.controller;
 
 
 import com.atguigu.ssyx.activity.service.ActivityInfoService;
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.activity.ActivityInfo;
 import com.atguigu.ssyx.model.product.SkuInfo;
 import com.atguigu.ssyx.vo.activity.ActivityRuleVo;

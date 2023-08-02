@@ -2,8 +2,8 @@ package com.atguigu.ssyx.cart.controller;
 
 import com.atguigu.ssyx.activity.client.ActivityFeignClient;
 import com.atguigu.ssyx.cart.service.CartInfoService;
-import com.atguigu.ssyx.common.auth.AuthContextHolder;
-import com.atguigu.ssyx.common.result.Result;
+import com.yx.ssyx.common.auth.AuthContextHolder;
+import com.yx.ssyx.common.result.Result;
 import com.atguigu.ssyx.model.order.CartInfo;
 import com.atguigu.ssyx.vo.order.OrderConfirmVo;
 import io.swagger.annotations.Api;
