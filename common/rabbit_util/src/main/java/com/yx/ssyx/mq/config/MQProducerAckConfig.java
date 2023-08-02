@@ -1,4 +1,4 @@
-package com.atguigu.ssyx.mq.config;
+package com.yx.ssyx.mq.config;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -7,8 +7,8 @@ import com.atguigu.ssyx.model.product.SkuAttrValue;
 import com.atguigu.ssyx.model.product.SkuImage;
 import com.atguigu.ssyx.model.product.SkuInfo;
 import com.atguigu.ssyx.model.product.SkuPoster;
-import com.atguigu.ssyx.mq.constant.MqConst;
-import com.atguigu.ssyx.mq.service.RabbitService;
+import com.yx.ssyx.mq.constant.MqConst;
+import com.yx.ssyx.mq.service.RabbitService;
 import com.atguigu.ssyx.product.mapper.SkuInfoMapper;
 import com.atguigu.ssyx.product.service.SkuAttrValueService;
 import com.atguigu.ssyx.product.service.SkuImageService;
@@ -18,7 +18,6 @@ import com.atguigu.ssyx.vo.product.SkuInfoQueryVo;
 import com.atguigu.ssyx.vo.product.SkuInfoVo;
 import com.atguigu.ssyx.vo.product.SkuStockLockVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -31,7 +30,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
-import java.util.Collections;
 import java.util.List;
 
 /**

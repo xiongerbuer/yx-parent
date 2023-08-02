@@ -1,4 +1,4 @@
-package com.atguigu.ssyx.mq.service;
+package com.yx.ssyx.mq.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
