@@ -14,7 +14,6 @@ import java.util.List;
  * <p>
  * 商品属性 前端控制器
  * </p>
- *
  */
 @RestController
 @RequestMapping("/admin/product/attr")
@@ -30,44 +29,40 @@ public class AttrController {
 //    method: 'get'
     @ApiOperation(value = "根据平台属性分组id查询")
     @GetMapping("{groupId}")
-    public Result list(@PathVariable Long groupId) {
+    public Result<List<Attr>> list(@PathVariable Long groupId) {
         List<Attr> list = attrService.getAttrListByGroupId(groupId);
         return Result.ok(list);
     }
 
     @ApiOperation(value = "获取")
     @GetMapping("get/{id}")
-    public Result get(@PathVariable Long id) {
+    public Result<Attr> get(@PathVariable Long id) {
         Attr attr = attrService.getById(id);
         return Result.ok(attr);
     }
 
     @ApiOperation(value = "新增")
     @PostMapping("save")
-    public Result save(@RequestBody Attr attr) {
-        attrService.save(attr);
-        return Result.ok(null);
+    public Result<Boolean> save(@RequestBody Attr attr) {
+        return Result.ok(attrService.save(attr));
     }
 
     @ApiOperation(value = "修改")
     @PutMapping("update")
-    public Result updateById(@RequestBody Attr attr) {
-        attrService.updateById(attr);
-        return Result.ok(null);
+    public Result<Boolean> updateById(@RequestBody Attr attr) {
+        return Result.ok(attrService.updateById(attr));
     }
 
     @ApiOperation(value = "删除")
     @DeleteMapping("remove/{id}")
-    public Result remove(@PathVariable Long id) {
-        attrService.removeById(id);
-        return Result.ok(null);
+    public Result<Boolean> remove(@PathVariable Long id) {
+        return Result.ok(attrService.removeById(id));
     }
 
     @ApiOperation(value = "根据id列表删除")
     @DeleteMapping("batchRemove")
-    public Result batchRemove(@RequestBody List<Long> idList) {
-        attrService.removeByIds(idList);
-        return Result.ok(null);
+    public Result<Boolean> batchRemove(@RequestBody List<Long> idList) {
+        return Result.ok(attrService.removeByIds(idList));
     }
 }
 

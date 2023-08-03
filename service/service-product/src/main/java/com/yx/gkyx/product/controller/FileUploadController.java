@@ -22,7 +22,7 @@ public class FileUploadController {
     //图片上传的方法
     @ApiOperation(value = "图片上传")
     @PostMapping("fileUpload")
-    public Result fileUpload(MultipartFile file) {
+    public Result<String> fileUpload(MultipartFile file) {
         String url = fileUploadService.uploadFile(file);
         return Result.ok(url);
     }

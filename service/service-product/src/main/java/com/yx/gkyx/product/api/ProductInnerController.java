@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/product")
-public class ProductInnnerController {
+public class ProductInnerController {
 
     @Autowired
     private CategoryService categoryService;

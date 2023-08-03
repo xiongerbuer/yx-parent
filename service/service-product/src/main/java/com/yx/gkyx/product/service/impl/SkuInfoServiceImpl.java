@@ -28,6 +28,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
@@ -36,7 +37,6 @@ import java.util.List;
  * <p>
  * sku信息 服务实现类
  * </p>
- *
  */
 @Service
 public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> implements SkuInfoService {
@@ -69,14 +69,14 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
         // SkuInfoVo 复制-- SkuInfo
         SkuInfo skuInfo = new SkuInfo();
 //        skuInfo.setSkuName(skuInfoVo.getSkuName());
-        BeanUtils.copyProperties(skuInfoVo,skuInfo);
+        BeanUtils.copyProperties(skuInfoVo, skuInfo);
         baseMapper.insert(skuInfo);
 
         //2 保存sku海报
         List<SkuPoster> skuPosterList = skuInfoVo.getSkuPosterList();
-        if(!CollectionUtils.isEmpty(skuPosterList)) {
+        if (!CollectionUtils.isEmpty(skuPosterList)) {
             //遍历，向每个海报对象添加商品skuid
-            for (SkuPoster skuPoster:skuPosterList) {
+            for (SkuPoster skuPoster : skuPosterList) {
                 skuPoster.setSkuId(skuInfo.getId());
             }
             skuPosterService.saveBatch(skuPosterList);
@@ -84,8 +84,8 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
 
         //3 保存sku图片
         List<SkuImage> skuImagesList = skuInfoVo.getSkuImagesList();
-        if(!CollectionUtils.isEmpty(skuImagesList)) {
-            for (SkuImage skuImage:skuImagesList) {
+        if (!CollectionUtils.isEmpty(skuImagesList)) {
+            for (SkuImage skuImage : skuImagesList) {
                 //设置商品skuid
                 skuImage.setSkuId(skuInfo.getId());
             }
@@ -94,8 +94,8 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
 
         //4 保存sku平台属性
         List<SkuAttrValue> skuAttrValueList = skuInfoVo.getSkuAttrValueList();
-        if(!CollectionUtils.isEmpty(skuAttrValueList)) {
-            for (SkuAttrValue skuAttrValue:skuAttrValueList) {
+        if (!CollectionUtils.isEmpty(skuAttrValueList)) {
+            for (SkuAttrValue skuAttrValue : skuAttrValueList) {
                 //设置商品skuid
                 skuAttrValue.setSkuId(skuInfo.getId());
             }
@@ -121,7 +121,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
         List<SkuAttrValue> skuAttrValueList = skuAttrValueService.getAttrValueListBySkuId(id);
 
         //封装所有数据，返回
-        BeanUtils.copyProperties(skuInfo,skuInfoVo);
+        BeanUtils.copyProperties(skuInfo, skuInfoVo);
         skuInfoVo.setSkuImagesList(skuImageList);
         skuInfoVo.setSkuPosterList(skuPosterList);
         skuInfoVo.setSkuAttrValueList(skuAttrValueList);
@@ -133,29 +133,29 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
     public void updateSkuInfo(SkuInfoVo skuInfoVo) {
         //修改sku基本信息
         SkuInfo skuInfo = new SkuInfo();
-        BeanUtils.copyProperties(skuInfoVo,skuInfo);
+        BeanUtils.copyProperties(skuInfoVo, skuInfo);
         baseMapper.updateById(skuInfo);
 
         Long skuId = skuInfoVo.getId();
         //海报信息
         LambdaQueryWrapper<SkuPoster> wrapperSkuPoster = new LambdaQueryWrapper<>();
-        wrapperSkuPoster.eq(SkuPoster::getSkuId,skuId);
+        wrapperSkuPoster.eq(SkuPoster::getSkuId, skuId);
         skuPosterService.remove(wrapperSkuPoster);
 
         List<SkuPoster> skuPosterList = skuInfoVo.getSkuPosterList();
-        if(!CollectionUtils.isEmpty(skuPosterList)) {
+        if (!CollectionUtils.isEmpty(skuPosterList)) {
             //遍历，向每个海报对象添加商品skuid
-            for (SkuPoster skuPoster:skuPosterList) {
+            for (SkuPoster skuPoster : skuPosterList) {
                 skuPoster.setSkuId(skuId);
             }
             skuPosterService.saveBatch(skuPosterList);
         }
 
         //商品图片
-        skuImageService.remove(new LambdaQueryWrapper<SkuImage>().eq(SkuImage::getSkuId,skuId));
+        skuImageService.remove(new LambdaQueryWrapper<SkuImage>().eq(SkuImage::getSkuId, skuId));
         List<SkuImage> skuImagesList = skuInfoVo.getSkuImagesList();
-        if(!CollectionUtils.isEmpty(skuImagesList)) {
-            for (SkuImage skuImage:skuImagesList) {
+        if (!CollectionUtils.isEmpty(skuImagesList)) {
+            for (SkuImage skuImage : skuImagesList) {
                 //设置商品skuid
                 skuImage.setSkuId(skuId);
             }
@@ -163,10 +163,10 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
         }
 
         //商品属性
-        skuAttrValueService.remove(new LambdaQueryWrapper<SkuAttrValue>().eq(SkuAttrValue::getSkuId,skuId));
+        skuAttrValueService.remove(new LambdaQueryWrapper<SkuAttrValue>().eq(SkuAttrValue::getSkuId, skuId));
         List<SkuAttrValue> skuAttrValueList = skuInfoVo.getSkuAttrValueList();
-        if(!CollectionUtils.isEmpty(skuAttrValueList)) {
-            for (SkuAttrValue skuAttrValue:skuAttrValueList) {
+        if (!CollectionUtils.isEmpty(skuAttrValueList)) {
+            for (SkuAttrValue skuAttrValue : skuAttrValueList) {
                 //设置商品skuid
                 skuAttrValue.setSkuId(skuId);
             }
@@ -185,22 +185,22 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
     //商品上下架
     @Override
     public void publish(Long skuId, Integer status) {
-        if(status == 1) { //上架
+        if (status == 1) { //上架
             SkuInfo skuInfo = baseMapper.selectById(skuId);
             skuInfo.setPublishStatus(status);
             baseMapper.updateById(skuInfo);
             //整合mq把数据同步到es里面
             rabbitService.sendMessage(MqConst.EXCHANGE_GOODS_DIRECT,
-                                      MqConst.ROUTING_GOODS_UPPER,
-                                      skuId);
+                    MqConst.ROUTING_GOODS_UPPER,
+                    skuId);
         } else { //下架
             SkuInfo skuInfo = baseMapper.selectById(skuId);
             skuInfo.setPublishStatus(status);
             baseMapper.updateById(skuInfo);
             //整合mq把数据同步到es里面
             rabbitService.sendMessage(MqConst.EXCHANGE_GOODS_DIRECT,
-                                      MqConst.ROUTING_GOODS_LOWER,
-                                      skuId);
+                    MqConst.ROUTING_GOODS_LOWER,
+                    skuId);
         }
     }
 
@@ -216,17 +216,15 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
     //根据skuId列表得到sku信息列表
     @Override
     public List<SkuInfo> findSkuInfoList(List<Long> skuIdList) {
-        List<SkuInfo> skuInfoList = baseMapper.selectBatchIds(skuIdList);
-        return skuInfoList;
+        return baseMapper.selectBatchIds(skuIdList);
     }
 
     //根据关键字匹配sku列表
     @Override
     public List<SkuInfo> findSkuInfoByKeyword(String keyword) {
-        List<SkuInfo> skuInfoList = baseMapper.selectList(
+        return baseMapper.selectList(
                 new LambdaQueryWrapper<SkuInfo>().like(SkuInfo::getSkuName, keyword)
         );
-        return skuInfoList;
     }
 
     //获取新人专享商品
@@ -236,16 +234,15 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
         //条件2 ： publish_status=1
         //条件3 ：显示其中三个
         //获取第一页数据，每页显示三条记录
-        Page<SkuInfo> pageParam = new Page<>(1,3);
+        Page<SkuInfo> pageParam = new Page<>(1, 3);
         //封装条件
         LambdaQueryWrapper<SkuInfo> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(SkuInfo::getIsNewPerson,1);
-        wrapper.eq(SkuInfo::getPublishStatus,1);
+        wrapper.eq(SkuInfo::getIsNewPerson, 1);
+        wrapper.eq(SkuInfo::getPublishStatus, 1);
         wrapper.orderByDesc(SkuInfo::getStock);//库存排序
         //调用方法查询
         IPage<SkuInfo> skuInfoPage = baseMapper.selectPage(pageParam, wrapper);
-        List<SkuInfo> skuInfoList = skuInfoPage.getRecords();
-        return skuInfoList;
+        return skuInfoPage.getRecords();
     }
 
     //根据skuId获取sku信息
@@ -267,7 +264,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
         List<SkuAttrValue> attrValueList = skuAttrValueService.getAttrValueListBySkuId(skuId);
 
         //封装到skuInfoVo对象
-        BeanUtils.copyProperties(skuInfo,skuInfoVo);
+        BeanUtils.copyProperties(skuInfo, skuInfoVo);
         skuInfoVo.setSkuImagesList(imageList);
         skuInfoVo.setSkuPosterList(posterList);
         skuInfoVo.setSkuAttrValueList(attrValueList);
@@ -279,19 +276,17 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
     public Boolean checkAndLock(List<SkuStockLockVo> skuStockLockVoList,
                                 String orderNo) {
         //1 判断skuStockLockVoList集合是否为空
-        if(CollectionUtils.isEmpty(skuStockLockVoList)) {
+        if (CollectionUtils.isEmpty(skuStockLockVoList)) {
             throw new SsyxException(ResultCodeEnum.DATA_ERROR);
         }
 
         //2 遍历skuStockLockVoList得到每个商品，验证库存并锁定库存，具备原子性
-        skuStockLockVoList.stream().forEach(skuStockLockVo -> {
-            this.checkLock(skuStockLockVo);
-        });
+        skuStockLockVoList.forEach(this::checkLock);
 
         //3 只要有一个商品锁定失败，所有锁定成功的商品都解锁
         boolean flag = skuStockLockVoList.stream()
                 .anyMatch(skuStockLockVo -> !skuStockLockVo.getIsLock());
-        if(flag) {
+        if (flag) {
             //所有锁定成功的商品都解锁
             skuStockLockVoList.stream().filter(SkuStockLockVo::getIsLock)
                     .forEach(skuStockLockVo -> {
@@ -304,7 +299,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
 
         //4 如果所有商品都锁定成功了，redis缓存相关数据，为了方便后面解锁和减库存
         redisTemplate.opsForValue()
-                .set(RedisConst.SROCK_INFO+orderNo,skuStockLockVoList);
+                .set(RedisConst.SROCK_INFO + orderNo, skuStockLockVoList);
         return true;
     }
 
@@ -313,13 +308,13 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
     public void minusStock(String orderNo) {
         //从redis获取锁定库存信息
         List<SkuStockLockVo> skuStockLockVoList =
-                (List<SkuStockLockVo>)redisTemplate.opsForValue().get(RedisConst.SROCK_INFO + orderNo);
-        if(CollectionUtils.isEmpty(skuStockLockVoList)) {
+                (List<SkuStockLockVo>) redisTemplate.opsForValue().get(RedisConst.SROCK_INFO + orderNo);
+        if (CollectionUtils.isEmpty(skuStockLockVoList)) {
             return;
         }
         //遍历集合，得到每个对象，减库存
         skuStockLockVoList.forEach(skuStockLockVo -> {
-            baseMapper.minusStock(skuStockLockVo.getSkuId(),skuStockLockVo.getSkuNum());
+            baseMapper.minusStock(skuStockLockVo.getSkuId(), skuStockLockVo.getSkuNum());
         });
 
         //删除redis数据
@@ -338,17 +333,17 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
         try {
             //验证库存
             SkuInfo skuInfo =
-                    baseMapper.checkStock(skuStockLockVo.getSkuId(),skuStockLockVo.getSkuNum());
+                    baseMapper.checkStock(skuStockLockVo.getSkuId(), skuStockLockVo.getSkuNum());
             //判断没有满足条件商品，设置isLock值false，返回
-            if(skuInfo == null) {
+            if (skuInfo == null) {
                 skuStockLockVo.setIsLock(false);
                 return;
             }
             //有满足条件商品
             //锁定库存:update
             Integer rows =
-                    baseMapper.lockStock(skuStockLockVo.getSkuId(),skuStockLockVo.getSkuNum());
-            if(rows == 1) {
+                    baseMapper.lockStock(skuStockLockVo.getSkuId(), skuStockLockVo.getSkuNum());
+            if (rows == 1) {
                 skuStockLockVo.setIsLock(true);
             }
         } finally {
@@ -366,17 +361,16 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
         String skuType = skuInfoQueryVo.getSkuType();
 
         LambdaQueryWrapper<SkuInfo> wrapper = new LambdaQueryWrapper<>();
-        if(!StringUtils.isEmpty(keyword)) {
-            wrapper.like(SkuInfo::getSkuName,keyword);
+        if (!StringUtils.isEmpty(keyword)) {
+            wrapper.like(SkuInfo::getSkuName, keyword);
         }
-        if(!StringUtils.isEmpty(categoryId)) {
-            wrapper.eq(SkuInfo::getCategoryId,categoryId);
+        if (!ObjectUtils.isEmpty(categoryId)) {
+            wrapper.eq(SkuInfo::getCategoryId, categoryId);
         }
-        if(!StringUtils.isEmpty(skuType)) {
-            wrapper.like(SkuInfo::getSkuType,skuType);
+        if (!StringUtils.isEmpty(skuType)) {
+            wrapper.like(SkuInfo::getSkuType, skuType);
         }
-        IPage<SkuInfo> pageModel = baseMapper.selectPage(pageParam,wrapper);
-        return pageModel;
+        return baseMapper.selectPage(pageParam, wrapper);
     }
 
 }
