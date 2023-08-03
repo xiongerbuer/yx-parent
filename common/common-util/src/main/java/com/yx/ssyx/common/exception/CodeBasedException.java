@@ -19,7 +19,7 @@ public class CodeBasedException extends RuntimeException {
 
     @Override
     public String getMessage() {
-        if(args == null || args.length == 0)
+        if (args == null || args.length == 0)
             return code.getMessage();
         return String.format(code.getMessage(), args);
     }

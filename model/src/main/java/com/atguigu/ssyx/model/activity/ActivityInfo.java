@@ -16,7 +16,6 @@ import java.util.Date;
  * ActivityInfo
  * </p>
  *
- * @author qy
  */
 @Data
 @ApiModel(description = "ActivityInfo")

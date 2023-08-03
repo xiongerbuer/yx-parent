@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
  * 仓库表 服务实现类
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-03
  */
 @Service
 public class WareServiceImpl extends ServiceImpl<WareMapper, Ware> implements WareService {

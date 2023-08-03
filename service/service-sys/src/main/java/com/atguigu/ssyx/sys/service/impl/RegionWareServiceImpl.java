@@ -18,8 +18,6 @@ import org.springframework.util.StringUtils;
  * 城市仓库关联表 服务实现类
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-03
  */
 @Service
 public class RegionWareServiceImpl extends ServiceImpl<RegionWareMapper, RegionWare> implements RegionWareService {

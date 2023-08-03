@@ -15,7 +15,6 @@ import java.math.BigDecimal;
  * ActivityRule
  * </p>
  *
- * @author qy
  */
 @Data
 @ApiModel(description = "ActivityRule")

@@ -14,8 +14,6 @@ import java.util.Map;
  * 优惠券信息 服务类
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-07
  */
 public interface CouponInfoService extends IService<CouponInfo> {
 

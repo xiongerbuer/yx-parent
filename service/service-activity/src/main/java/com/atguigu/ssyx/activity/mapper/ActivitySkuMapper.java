@@ -8,9 +8,6 @@ import org.springframework.stereotype.Repository;
  * <p>
  * 活动参与商品 Mapper 接口
  * </p>
- *
- * @author xiongyou
- * @since 2023-04-07
  */
 @Repository
 public interface ActivitySkuMapper extends BaseMapper<ActivitySku> {

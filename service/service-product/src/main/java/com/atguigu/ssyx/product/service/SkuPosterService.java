@@ -10,8 +10,6 @@ import java.util.List;
  * 商品海报表 服务类
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-04
  */
 public interface SkuPosterService extends IService<SkuPoster> {
 

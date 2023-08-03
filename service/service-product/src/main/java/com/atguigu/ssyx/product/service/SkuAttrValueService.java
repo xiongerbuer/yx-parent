@@ -10,8 +10,6 @@ import java.util.List;
  * spu属性值 服务类
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-04
  */
 public interface SkuAttrValueService extends IService<SkuAttrValue> {
 

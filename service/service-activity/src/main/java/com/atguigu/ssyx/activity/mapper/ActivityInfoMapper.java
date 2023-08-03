@@ -13,9 +13,6 @@ import java.util.List;
  * <p>
  * 活动表 Mapper 接口
  * </p>
- *
- * @author xiongyou
- * @since 2023-04-07
  */
 public interface ActivityInfoMapper extends BaseMapper<ActivityInfo> {
 

@@ -21,8 +21,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  * 优惠券信息 前端控制器
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-07
  */
 @RestController
 @Api(tags = "优惠卷相关信息接口")

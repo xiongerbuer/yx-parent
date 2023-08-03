@@ -37,9 +37,6 @@ import java.util.stream.Collectors;
  * <p>
  * 活动表 服务实现类
  * </p>
- *
- * @author xiongyou
- * @since 2023-04-07
  */
 @Slf4j
 @Service

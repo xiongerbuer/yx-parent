@@ -8,8 +8,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 商品三级分类 Mapper 接口
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-04
  */
 public interface CategoryMapper extends BaseMapper<Category> {
 

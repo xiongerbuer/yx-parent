@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
  * 优惠券领用表 Mapper 接口
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-07
  */
 @Repository
 public interface CouponUseMapper extends BaseMapper<CouponUse> {

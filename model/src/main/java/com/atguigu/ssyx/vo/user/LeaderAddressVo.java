@@ -10,7 +10,6 @@ import lombok.Data;
  * UserAddress
  * </p>
  *
- * @author qy
  */
 @Data
 @ApiModel(description = "用户地址")

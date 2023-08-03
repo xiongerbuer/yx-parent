@@ -20,8 +20,6 @@ import java.time.LocalDateTime;
 /**
  * @ClassName 基础字段赋值
  * @Description 基础字段自动赋值
- * @Author tuzhen@isiiot.com
- * @Date 2023-04-23 16:31
  * @see SpringSecurityAuditorAware
  */
 @Getter

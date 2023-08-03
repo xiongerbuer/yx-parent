@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
  * 订单项信息 Mapper 接口
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-18
  */
 @Repository
 public interface OrderItemMapper extends BaseMapper<OrderItem> {

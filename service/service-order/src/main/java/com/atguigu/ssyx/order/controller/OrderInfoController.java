@@ -22,9 +22,6 @@ import java.util.Date;
  * <p>
  * 订单 前端控制器
  * </p>
- *
- * @author xiongyou
- * @since 2023-04-18
  */
 @RestController
 @RequestMapping(value="/api/order")

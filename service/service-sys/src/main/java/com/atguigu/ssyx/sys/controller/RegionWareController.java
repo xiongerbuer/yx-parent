@@ -20,8 +20,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  * 城市仓库关联表 前端控制器
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-03
  */
 @RestController
 @Api(tags = "开通区域接口")

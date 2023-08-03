@@ -14,8 +14,6 @@ import java.util.List;
  * 商品海报表 服务实现类
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-04
  */
 @Service
 public class SkuPosterServiceImpl extends ServiceImpl<SkuPosterMapper, SkuPoster> implements SkuPosterService {

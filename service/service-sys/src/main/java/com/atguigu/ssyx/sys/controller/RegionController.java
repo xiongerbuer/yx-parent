@@ -19,8 +19,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  * 地区表 前端控制器
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-03
  */
 @RestController
 @Api(tags = {"区域信息接口"})

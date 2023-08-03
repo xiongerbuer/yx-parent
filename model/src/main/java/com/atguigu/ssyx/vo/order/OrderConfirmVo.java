@@ -14,7 +14,6 @@ import java.util.List;
  * OrderDetailActivity
  * </p>
  *
- * @author qy
  */
 @Data
 public class OrderConfirmVo implements Serializable {

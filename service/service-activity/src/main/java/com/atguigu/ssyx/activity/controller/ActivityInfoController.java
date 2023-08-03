@@ -23,9 +23,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  * <p>
  * 活动表 前端控制器
  * </p>
- *
- * @author xiongyou
- * @since 2023-04-07
  */
 @RestController
 @Api(tags = "活动相关信息接口")

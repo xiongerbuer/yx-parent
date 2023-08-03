@@ -15,8 +15,6 @@ import java.util.WeakHashMap;
  * 商品属性 服务实现类
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-04
  */
 @Service
 public class AttrServiceImpl extends ServiceImpl<AttrMapper, Attr> implements AttrService {

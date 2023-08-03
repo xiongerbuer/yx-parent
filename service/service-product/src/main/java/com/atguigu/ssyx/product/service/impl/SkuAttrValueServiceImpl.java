@@ -14,8 +14,6 @@ import java.util.List;
  * spu属性值 服务实现类
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-04
  */
 @Service
 public class SkuAttrValueServiceImpl extends ServiceImpl<SkuAttrValueMapper, SkuAttrValue> implements SkuAttrValueService {

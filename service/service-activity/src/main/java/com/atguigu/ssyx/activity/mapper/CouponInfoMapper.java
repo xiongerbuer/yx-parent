@@ -12,8 +12,6 @@ import java.util.List;
  * 优惠券信息 Mapper 接口
  * </p>
  *
- * @author xiongyou
- * @since 2023-04-07
  */
 public interface CouponInfoMapper extends BaseMapper<CouponInfo> {
 
