@@ -1,0 +1,14 @@
+package com.yx.gkyx.product.mapper;
+
+import com.yx.gkyx.model.product.SkuImage;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+/**
+ * <p>
+ * 商品图片 Mapper 接口
+ * </p>
+ *
+ */
+public interface SkuImageMapper extends BaseMapper<SkuImage> {
+
+}

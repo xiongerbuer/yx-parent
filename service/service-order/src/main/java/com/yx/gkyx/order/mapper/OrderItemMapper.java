@@ -1,0 +1,16 @@
+package com.yx.gkyx.order.mapper;
+
+import com.yx.gkyx.model.order.OrderItem;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
+
+/**
+ * <p>
+ * 订单项信息 Mapper 接口
+ * </p>
+ *
+ */
+@Repository
+public interface OrderItemMapper extends BaseMapper<OrderItem> {
+
+}

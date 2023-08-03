@@ -51,11 +51,11 @@ spring:
 #          - data_id: gst-sale-excel.yaml
 #          - data_id: gst-flyway.yaml
 #          - data_id: gst-logging.yaml
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 #swagger:
 #  enable: true
 #  base-package: com.isiiot.sale.excel
