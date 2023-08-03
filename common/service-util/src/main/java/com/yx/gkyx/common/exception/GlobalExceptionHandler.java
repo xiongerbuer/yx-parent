@@ -20,9 +20,9 @@ public class GlobalExceptionHandler {
     }
 
     //自定义异常处理
-    @ExceptionHandler(SsyxException.class)
+    @ExceptionHandler(GkyxException.class)
     @ResponseBody
-    public Result<Object> error(SsyxException exception) {
+    public Result<Object> error(GkyxException exception) {
         return Result.build(null, exception.getCode(), exception.getMessage());
     }
 }

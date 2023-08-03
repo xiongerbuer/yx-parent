@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.yx.gkyx.common.auth.AuthContextHolder;
 import com.yx.gkyx.common.constant.RedisConst;
-import com.yx.gkyx.common.exception.SsyxException;
+import com.yx.gkyx.common.exception.GkyxException;
 import com.yx.gkyx.common.result.Result;
 import com.yx.gkyx.common.result.ResultCodeEnum;
 import com.yx.gkyx.common.utils.JwtHelper;
@@ -67,7 +67,7 @@ public class WeiXinApiController {
         try {
             result = HttpClientUtils.get(tokenUrl);
         } catch (Exception e) {
-            throw new SsyxException(ResultCodeEnum.FETCH_ACCESSTOKEN_FAILD);
+            throw new GkyxException(ResultCodeEnum.FETCH_ACCESSTOKEN_FAILD);
         }
 
         //3 请求微信接口服务，返回两个值 session_key 和 openid

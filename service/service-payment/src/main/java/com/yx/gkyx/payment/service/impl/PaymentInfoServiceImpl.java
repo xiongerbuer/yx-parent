@@ -1,6 +1,6 @@
 package com.yx.gkyx.payment.service.impl;
 
-import com.yx.gkyx.common.exception.SsyxException;
+import com.yx.gkyx.common.exception.GkyxException;
 import com.yx.gkyx.common.result.ResultCodeEnum;
 import com.yx.gkyx.enums.PaymentStatus;
 import com.yx.gkyx.enums.PaymentType;
@@ -42,7 +42,7 @@ public class PaymentInfoServiceImpl extends ServiceImpl<PaymentInfoMapper, Payme
         //远程调用调用，根据orderNo查询订单信息
         OrderInfo orderInfo = orderFeignClient.getOrderInfo(orderNo);
         if(orderInfo == null) {
-            throw new SsyxException(ResultCodeEnum.DATA_ERROR);
+            throw new GkyxException(ResultCodeEnum.DATA_ERROR);
         }
         //封装到PaymentInfo对象
         PaymentInfo paymentInfo = new PaymentInfo();

@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 /**
  * 实现ResponseBodyAdvice接口，可以对返回值在输出之前进行修改
  */
-@RestControllerAdvice(basePackages = {"com.yx", "com.ssyx"})
+@RestControllerAdvice(basePackages = {"com.yx", "com.gkyx"})
 public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
 
     @Autowired

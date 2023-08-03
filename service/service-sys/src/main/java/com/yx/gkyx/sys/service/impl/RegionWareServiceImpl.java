@@ -1,6 +1,6 @@
 package com.yx.gkyx.sys.service.impl;
 
-import com.yx.gkyx.common.exception.SsyxException;
+import com.yx.gkyx.common.exception.GkyxException;
 import com.yx.gkyx.common.result.ResultCodeEnum;
 import com.yx.gkyx.model.sys.RegionWare;
 import com.yx.gkyx.sys.mapper.RegionWareMapper;
@@ -54,7 +54,7 @@ public class RegionWareServiceImpl extends ServiceImpl<RegionWareMapper, RegionW
         Integer count = baseMapper.selectCount(wrapper);
         if(count > 0) { //已经存在
             //抛出自定义异常
-            throw new SsyxException(ResultCodeEnum.REGION_OPEN);
+            throw new GkyxException(ResultCodeEnum.REGION_OPEN);
         }
         baseMapper.insert(regionWare);
     }

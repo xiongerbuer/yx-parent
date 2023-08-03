@@ -14,7 +14,7 @@ public class ExcelConfig {
 
     @Bean
     Map<String, Class<?>> excelModels() {
-        Reflections reflections = new Reflections("com.yx.ssyx.excel.model.excel");
+        Reflections reflections = new Reflections("com.yx.gkyx.excel.model.excel");
         return reflections.getTypesAnnotatedWith(Table.class)
                 .stream().collect(Collectors.toMap(
                         clazz -> clazz.getAnnotation(Table.class).name(),

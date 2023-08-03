@@ -19,10 +19,10 @@ public class CodeGet {
         // 2、全局配置
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir("C:\\Users\\Administrator\\Desktop\\ssyx-project\\code\\guigu-ssyx-parent\\service\\service-order"+"/src/main/java");
+        gc.setOutputDir("D:\\BaiduNetdiskDownload\\yx-gkyx-parent\\service\\service-order"+"/src/main/java");
 
         gc.setServiceName("%sService");	//去掉Service接口的首字母I
-        gc.setAuthor("atguigu");
+        gc.setAuthor("yx");
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
@@ -37,7 +37,7 @@ public class CodeGet {
 
         // 4、包配置
         PackageConfig pc = new PackageConfig();
-        // com.atguigu.ssyx.product.
+        // com.yx.gkyx.product.
         pc.setParent("com.yx.gkyx");
         pc.setModuleName("order"); //模块名
         pc.setController("controller");

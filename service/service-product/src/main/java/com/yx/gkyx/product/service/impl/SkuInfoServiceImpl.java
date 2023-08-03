@@ -1,7 +1,7 @@
 package com.yx.gkyx.product.service.impl;
 
 import com.yx.gkyx.common.constant.RedisConst;
-import com.yx.gkyx.common.exception.SsyxException;
+import com.yx.gkyx.common.exception.GkyxException;
 import com.yx.gkyx.common.result.ResultCodeEnum;
 import com.yx.gkyx.model.product.SkuAttrValue;
 import com.yx.gkyx.model.product.SkuImage;
@@ -277,7 +277,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> impl
                                 String orderNo) {
         //1 判断skuStockLockVoList集合是否为空
         if (CollectionUtils.isEmpty(skuStockLockVoList)) {
-            throw new SsyxException(ResultCodeEnum.DATA_ERROR);
+            throw new GkyxException(ResultCodeEnum.DATA_ERROR);
         }
 
         //2 遍历skuStockLockVoList得到每个商品，验证库存并锁定库存，具备原子性

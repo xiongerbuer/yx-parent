@@ -4,7 +4,7 @@ import com.yx.gkyx.common.result.ResultCodeEnum;
 import lombok.Data;
 
 @Data
-public class SsyxException extends RuntimeException{
+public class GkyxException extends RuntimeException{
 
     //异常状态码
     private Integer code;
@@ -14,7 +14,7 @@ public class SsyxException extends RuntimeException{
      * @param message
      * @param code
      */
-    public SsyxException(String message, Integer code) {
+    public GkyxException(String message, Integer code) {
         super(message);
         this.code = code;
     }
@@ -24,7 +24,7 @@ public class SsyxException extends RuntimeException{
      * 接收枚举类型对象
      * @param resultCodeEnum
      */
-    public SsyxException(ResultCodeEnum resultCodeEnum) {
+    public GkyxException(ResultCodeEnum resultCodeEnum) {
         super(resultCodeEnum.getMessage());
         this.code = resultCodeEnum.getCode();
     }

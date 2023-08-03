@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class UserLoginInterceptor implements HandlerInterceptor {
 
-    private RedisTemplate redisTemplate;
+    private final RedisTemplate redisTemplate;
+
     public UserLoginInterceptor(RedisTemplate redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
@@ -30,14 +31,14 @@ public class UserLoginInterceptor implements HandlerInterceptor {
         String token = request.getHeader("token");
 
         //判断token不为空
-        if(!StringUtils.isEmpty(token)) {
+        if (!StringUtils.isEmpty(token)) {
             //从token获取userId
             Long userId = JwtHelper.getUserId(token);
             //根据userId到Redis获取用户信息
-            UserLoginVo userLoginVo = (UserLoginVo)redisTemplate.opsForValue()
-                                        .get(RedisConst.USER_LOGIN_KEY_PREFIX + userId);
+            UserLoginVo userLoginVo = (UserLoginVo) redisTemplate.opsForValue()
+                    .get(RedisConst.USER_LOGIN_KEY_PREFIX + userId);
             //获取数据放到ThreadLocal里面
-            if(userLoginVo != null) {
+            if (userLoginVo != null) {
                 AuthContextHolder.setUserId(userLoginVo.getUserId());
                 AuthContextHolder.setWareId(userLoginVo.getWareId());
                 AuthContextHolder.setUserLoginVo(userLoginVo);

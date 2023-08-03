@@ -3,7 +3,7 @@ package com.yx.gkyx.cart.service.impl;
 import com.yx.gkyx.cart.service.CartInfoService;
 import com.yx.gkyx.client.product.ProductFeignClient;
 import com.yx.gkyx.common.constant.RedisConst;
-import com.yx.gkyx.common.exception.SsyxException;
+import com.yx.gkyx.common.exception.GkyxException;
 import com.yx.gkyx.common.result.ResultCodeEnum;
 import com.yx.gkyx.enums.SkuType;
 import com.yx.gkyx.model.order.CartInfo;
@@ -69,7 +69,7 @@ public class CartInfoServiceImpl implements CartInfoService {
             //判断商品数量不能大于限购数量
             Integer perLimit = cartInfo.getPerLimit();
             if (currentSkuNum > perLimit) {
-                throw new SsyxException(ResultCodeEnum.SKU_LIMIT_ERROR);
+                throw new GkyxException(ResultCodeEnum.SKU_LIMIT_ERROR);
             }
 
             //更新其他值
@@ -83,7 +83,7 @@ public class CartInfoServiceImpl implements CartInfoService {
             //远程调用根据skuId获取skuInfo
             SkuInfo skuInfo = productFeignClient.getSkuInfo(skuId);
             if (skuInfo == null) {
-                throw new SsyxException(ResultCodeEnum.DATA_ERROR);
+                throw new GkyxException(ResultCodeEnum.DATA_ERROR);
             }
 
             //封装cartInfo对象

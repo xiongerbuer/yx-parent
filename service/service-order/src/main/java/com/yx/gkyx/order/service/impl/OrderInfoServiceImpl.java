@@ -6,7 +6,7 @@ import com.yx.gkyx.client.product.ProductFeignClient;
 import com.yx.gkyx.client.user.UserFeignClient;
 import com.yx.gkyx.common.auth.AuthContextHolder;
 import com.yx.gkyx.common.constant.RedisConst;
-import com.yx.gkyx.common.exception.SsyxException;
+import com.yx.gkyx.common.exception.GkyxException;
 import com.yx.gkyx.common.result.ResultCodeEnum;
 import com.yx.gkyx.common.utils.DateUtil;
 import com.yx.gkyx.model.activity.ActivityRule;
@@ -116,7 +116,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         //1 获取传递过来的订单 orderNo
         String orderNo = orderParamVo.getOrderNo();
         if(StringUtils.isEmpty(orderNo)) {
-            throw new SsyxException(ResultCodeEnum.ILLEGAL_REQUEST);
+            throw new GkyxException(ResultCodeEnum.ILLEGAL_REQUEST);
         }
 
         //2 拿着orderNo 到 redis进行查询，
@@ -127,7 +127,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
                                     Arrays.asList(RedisConst.ORDER_REPEAT + orderNo), orderNo);
         //4 如果redis没有相同orderNo，表示重复提交了，不能再往后进行
         if(!flag) {
-            throw new SsyxException(ResultCodeEnum.REPEAT_SUBMIT);
+            throw new GkyxException(ResultCodeEnum.REPEAT_SUBMIT);
         }
 
         //第三步 验证库存 并且 锁定库存
@@ -158,7 +158,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
             Boolean isLockSuccess =
                     productFeignClient.checkAndLock(commonStockLockVoList, orderNo);
             if(!isLockSuccess) {//库存锁定失败
-                throw new SsyxException(ResultCodeEnum.ORDER_STOCK_FALL);
+                throw new GkyxException(ResultCodeEnum.ORDER_STOCK_FALL);
             }
         }
 
@@ -182,13 +182,13 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
     public Long saveOrder(OrderSubmitVo orderParamVo,
                            List<CartInfo> cartInfoList) {
         if(CollectionUtils.isEmpty(cartInfoList)) {
-            throw new SsyxException(ResultCodeEnum.DATA_ERROR);
+            throw new GkyxException(ResultCodeEnum.DATA_ERROR);
         }
         //查询用户提货点和团长信息
         Long userId = AuthContextHolder.getUserId();
         LeaderAddressVo leaderAddressVo = userFeignClient.getUserAddressByUserId(userId);
         if(leaderAddressVo == null) {
-            throw new SsyxException(ResultCodeEnum.DATA_ERROR);
+            throw new GkyxException(ResultCodeEnum.DATA_ERROR);
         }
         //计算金额
         //营销活动金额

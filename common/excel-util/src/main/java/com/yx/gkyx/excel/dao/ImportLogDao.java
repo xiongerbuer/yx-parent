@@ -3,7 +3,7 @@ package com.yx.gkyx.excel.dao;
 import com.yx.gkyx.common.jpa.BaseJpaRepository;
 import com.yx.gkyx.excel.model.mysql.ExcelImportStatus;
 import com.yx.gkyx.excel.model.mysql.ImportLog;
-//import com.yx.ssyx.excel.model.mysql.ImportLog_;
+//import com.yx.gkyx.excel.model.mysql.ImportLog_;
 import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
