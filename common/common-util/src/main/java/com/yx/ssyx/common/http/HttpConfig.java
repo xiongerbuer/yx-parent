@@ -1,9 +1,5 @@
 package com.yx.ssyx.common.http;
 
-import com.yx.ssyx.common.http.mvc.CurrentUserHandlerMethodArgumentResolver;
-import com.yx.ssyx.common.http.mvc.GlobalResponseHandler;
-import com.yx.ssyx.common.http.mvc.RequestUserContextAdvice;
-import com.yx.ssyx.common.http.serializer.JsonDecimalFieldSerializer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -13,7 +9,14 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-
+import com.yx.ssyx.common.constant.DateTimeConstants;
+import com.yx.ssyx.common.feign.EnumDescFeignClient;
+import com.yx.ssyx.common.http.mvc.CurrentUserHandlerMethodArgumentResolver;
+import com.yx.ssyx.common.http.mvc.GlobalResponseHandler;
+import com.yx.ssyx.common.http.mvc.RequestUserContextAdvice;
+import com.yx.ssyx.common.http.serializer.JsonDecimalFieldSerializer;
+import com.yx.ssyx.common.vo.CommonResult;
+import com.yx.ssyx.common.vo.EnumDescVo;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -25,6 +28,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.annotation.Order;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.core.mapping.RepositoryDetectionStrategy;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+import org.springframework.data.web.config.PageableHandlerMethodArgumentResolverCustomizer;
 import org.springframework.http.MediaType;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -142,7 +149,7 @@ public class HttpConfig {
                             .setLimitParamName("pageSize")
                             .setDefaultMediaType(MediaType.APPLICATION_JSON)
                             .useHalAsDefaultJsonMediaType(false)
-                            .setRepositoryDetectionStrategy(RepositoryDetectionStrategies.ANNOTATED)
+                            .setRepositoryDetectionStrategy(RepositoryDetectionStrategy.RepositoryDetectionStrategies.ANNOTATED)
                             .setExposeRepositoryMethodsByDefault(false);
                 }
             };

@@ -16,10 +16,8 @@ import lombok.Data;
  * }
  * </code></pre>
  *
- * @author liumaomao
  * @see CurrentUser
  * @see CurrentUserHandlerMethodArgumentResolver
- * @since 2022-10-18
  */
 @Data
 @Schema(description = "用户上下文信息")

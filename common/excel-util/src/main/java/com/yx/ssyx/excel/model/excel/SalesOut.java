@@ -16,7 +16,7 @@ import java.math.BigDecimal;
  * 销售出库单
  */
 @Data
-@Table(name = "salesOut")
+@Table(name = "sales_out")
 @HeadStyle(fillBackgroundColor = 9)
 public class SalesOut extends ExcelModel {
 

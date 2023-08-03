@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  * 销售单
  */
 @Data
-@Table(name = "saleOrder")
+@Table(name = "sale_order")
 @HeadStyle(fillBackgroundColor = 9)
 public class SaleOrder extends ExcelModel {
 

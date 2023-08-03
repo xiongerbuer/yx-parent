@@ -1,9 +1,12 @@
 package com.yx.ssyx.excel.controller;
 
 
+import com.yx.ssyx.common.http.UserContext;
+import com.yx.ssyx.common.http.annotation.CurrentUser;
 import com.yx.ssyx.excel.dao.ImportLogDao;
 import com.yx.ssyx.excel.model.mysql.ImportLog;
 import com.yx.ssyx.excel.service.ExcelImportService;
+import com.yx.ssyx.excel.vo.RequestDateRange;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +47,7 @@ public class ImportLogController {
     @GetMapping
     @ApiOperation(value = "Excel导入日志")
     public Page<ImportLog> queryPage(@CurrentUser UserContext userContext,
-                                     ImportLogQuery query,
+                                     ImportLogDao.ImportLogQuery query,
                                      @PageableDefault(sort = "createAt", direction = DESC) Pageable pageable) {
         query.setTenantId(userContext.getCurrentTenantId());
         return importLogDao.findByQuery(query, pageable);

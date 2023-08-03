@@ -1,8 +1,11 @@
 package com.yx.ssyx.excel.service;
 
+import cn.hutool.core.util.ReflectUtil;
 import com.yx.ssyx.common.constant.DateTimeConstants;
 import com.google.common.collect.Lists;
 import com.pig4cloud.plugin.excel.vo.ErrorMessage;
+import com.yx.ssyx.common.http.ContextContainer;
+import com.yx.ssyx.common.http.UserContext;
 import com.yx.ssyx.excel.annotation.Schema;
 import com.yx.ssyx.excel.annotation.Table;
 import com.yx.ssyx.excel.dao.ErrorRowDao;
@@ -53,15 +56,15 @@ public class ExcelImportService {
 
     boolean pmdKnownBroken;
 
-    @Autowired
-    MinioProperties minioProperties;
+//    @Autowired
+//    MinioProperties minioProperties;
 
     @Autowired
     @Qualifier("clickhouseDataSource")
     private DataSource dataSource;
 
-    @Autowired
-    MinioService minioService;
+//    @Autowired
+//    MinioService minioService;
 
     @Autowired
     ImportLogDao importLogDao;
@@ -231,9 +234,9 @@ public class ExcelImportService {
         Path tempFile = Files.createTempFile(tempFileName, ".xlsx");
         Files.copy(is, tempFile, StandardCopyOption.REPLACE_EXISTING);
         // 上传MinIO
-        String minioFileName = originFileName + UUID.randomUUID() + ".xlsx";
-        Path minioPath = Paths.get("gst-excel", dir, minioFileName);
-        minioService.upload(minioPath, Files.newInputStream(tempFile));
+//        String minioFileName = originFileName + UUID.randomUUID() + ".xlsx";
+//        Path minioPath = Paths.get("gst-excel", dir, minioFileName);
+//        minioService.upload(minioPath, Files.newInputStream(tempFile));
 
         // 生成导入日志
         UserContext context = ContextContainer.getContext();
@@ -245,7 +248,7 @@ public class ExcelImportService {
         importLog.setUserId(context.getCurrentUserId());
         importLog.setTenantId(context.getCurrentTenantId());
         importLog.setDeleted(false);
-        importLog.setFileUrl(minioProperties.getUrl() + "/" + minioProperties.getBucket() + "/" + minioPath);
+//        importLog.setFileUrl(minioProperties.getUrl() + "/" + minioProperties.getBucket() + "/" + minioPath);
         importLog.setModelType(modelClass);
         importLog.setCreateBy(String.valueOf(context.getCurrentUserId()));
         importLog.setModifyBy(String.valueOf(context.getCurrentUserId()));
@@ -266,7 +269,7 @@ public class ExcelImportService {
             importLog.setStatus(ExcelImportStatus.SUCCESS);
         } else {
             importLog.setStatus(ExcelImportStatus.FAIL);
-            importLog.setErrorFileUrl("/gst/sale-excel/error-rows/" + importLog.getLogId());
+//            importLog.setErrorFileUrl("/gst/sale-excel/error-rows/" + importLog.getLogId());
             importLog.setInfo(String.format("成功%s条，失败%s", data.size(), errorMessageList.size()));
             List<ErrorRow> errorRows = errorMessageList.stream().map(m -> {
                 ErrorRow row = new ErrorRow();

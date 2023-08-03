@@ -16,8 +16,6 @@ import java.text.DecimalFormat;
 /**
  * JsonDecimalSerializer
  *
- * @author liumaomao
- * @since 2023-01-19
  */
 public class JsonDecimalFieldSerializer extends JsonSerializer<BigDecimal> implements ContextualSerializer {
     protected DecimalFormat decimalFormat;

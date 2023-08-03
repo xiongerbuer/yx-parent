@@ -6,13 +6,13 @@ import com.atguigu.ssyx.vo.user.UserLoginVo;
 public class AuthContextHolder {
 
     //用户id
-    private static ThreadLocal<Long> userId = new ThreadLocal<>();
+    private static final ThreadLocal<Long> userId = new ThreadLocal<>();
 
     //用户仓库id
-    private static ThreadLocal<Long> wareId = new ThreadLocal<>();
+    private static final ThreadLocal<Long> wareId = new ThreadLocal<>();
 
     //用户信息对象
-    private static ThreadLocal<UserLoginVo> userLoginVo = new ThreadLocal<>();
+    private static final ThreadLocal<UserLoginVo> userLoginVo = new ThreadLocal<>();
 
     //userId操作的方法
     public static void setUserId(Long _userId) {
@@ -23,11 +23,11 @@ public class AuthContextHolder {
         return userId.get();
     }
 
-    public static Long getWareId(){
+    public static Long getWareId() {
         return wareId.get();
     }
 
-    public static void setWareId(Long _wareId){
+    public static void setWareId(Long _wareId) {
         wareId.set(_wareId);
     }
 
@@ -38,6 +38,5 @@ public class AuthContextHolder {
     public static void setUserLoginVo(UserLoginVo _userLoginVo) {
         userLoginVo.set(_userLoginVo);
     }
-
 
 }

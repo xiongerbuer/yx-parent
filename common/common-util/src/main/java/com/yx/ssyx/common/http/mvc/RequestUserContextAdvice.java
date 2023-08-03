@@ -28,9 +28,7 @@ import static com.yx.ssyx.common.http.ContextContainer.MODEL_ATTR_USER_CONTEXT;
 
 
 /**
- * @author liumaomao
  * @see ContextContainer
- * @since 2022-10-18
  */
 @Slf4j
 @ControllerAdvice
