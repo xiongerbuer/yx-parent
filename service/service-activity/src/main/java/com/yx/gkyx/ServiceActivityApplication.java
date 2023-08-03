@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-@ComponentScan("com.atguigu")
+@ComponentScan("com.yx")
 public class ServiceActivityApplication {
 
     public static void main(String[] args) {

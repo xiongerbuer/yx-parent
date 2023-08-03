@@ -3,7 +3,7 @@ package com.yx.gkyx.payment.service.impl;
 import com.yx.gkyx.common.constant.RedisConst;
 import com.yx.gkyx.model.order.PaymentInfo;
 import com.yx.gkyx.payment.service.PaymentInfoService;
-import com.yx.gkyx.payment.service.WeixinService;
+import com.yx.gkyx.payment.service.WeiXinService;
 import com.yx.gkyx.payment.utils.ConstantPropertiesUtils;
 import com.yx.gkyx.payment.utils.HttpClient;
 import com.yx.gkyx.vo.user.UserLoginVo;
@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class WeixinServiceImpl implements WeixinService {
+public class WeiXinServiceImpl implements WeiXinService {
 
     @Autowired
     private PaymentInfoService paymentInfoService;

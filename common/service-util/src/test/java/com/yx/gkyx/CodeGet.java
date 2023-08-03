@@ -38,7 +38,7 @@ public class CodeGet {
         // 4、包配置
         PackageConfig pc = new PackageConfig();
         // com.atguigu.ssyx.product.
-        pc.setParent("com.atguigu.ssyx");
+        pc.setParent("com.yx.gkyx");
         pc.setModuleName("order"); //模块名
         pc.setController("controller");
         pc.setService("service");

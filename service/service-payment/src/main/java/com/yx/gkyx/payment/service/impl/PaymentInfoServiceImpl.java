@@ -9,7 +9,7 @@ import com.yx.gkyx.model.order.PaymentInfo;
 import com.yx.gkyx.mq.constant.MqConst;
 import com.yx.gkyx.mq.service.RabbitService;
 import com.yx.gkyx.order.client.OrderFeignClient;
-import com.yx.gkyx.payment.mapper.PaymentInfoMappper;
+import com.yx.gkyx.payment.mapper.PaymentInfoMapper;
 import com.yx.gkyx.payment.service.PaymentInfoService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.Map;
 
 @Service
-public class PaymentInfoServiceImpl extends ServiceImpl<PaymentInfoMappper, PaymentInfo> implements PaymentInfoService {
+public class PaymentInfoServiceImpl extends ServiceImpl<PaymentInfoMapper, PaymentInfo> implements PaymentInfoService {
 
     @Autowired
     private OrderFeignClient orderFeignClient;
@@ -31,11 +31,10 @@ public class PaymentInfoServiceImpl extends ServiceImpl<PaymentInfoMappper, Paym
 
     @Override
     public PaymentInfo getPaymentInfoByOrderNo(String orderNo) {
-        PaymentInfo paymentInfo = baseMapper.selectOne(
+        return baseMapper.selectOne(
                 new LambdaQueryWrapper<PaymentInfo>()
                         .eq(PaymentInfo::getOrderNo, orderNo)
         );
-        return paymentInfo;
     }
 
     @Override

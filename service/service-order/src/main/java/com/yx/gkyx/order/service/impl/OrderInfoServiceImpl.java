@@ -9,7 +9,6 @@ import com.yx.gkyx.common.constant.RedisConst;
 import com.yx.gkyx.common.exception.SsyxException;
 import com.yx.gkyx.common.result.ResultCodeEnum;
 import com.yx.gkyx.common.utils.DateUtil;
-import com.atguigu.ssyx.enums.*;
 import com.yx.gkyx.model.activity.ActivityRule;
 import com.yx.gkyx.model.activity.CouponInfo;
 import com.yx.gkyx.model.order.CartInfo;

@@ -3,7 +3,7 @@ package com.yx.gkyx.payment.controller;
 import com.yx.gkyx.common.result.Result;
 import com.yx.gkyx.common.result.ResultCodeEnum;
 import com.yx.gkyx.payment.service.PaymentInfoService;
-import com.yx.gkyx.payment.service.WeixinService;
+import com.yx.gkyx.payment.service.WeiXinService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,10 +16,10 @@ import java.util.Map;
 @Api(tags = "微信支付接口")
 @RestController
 @RequestMapping("/api/payment/weixin")
-public class WeixinController {
+public class WeiXinController {
 
     @Autowired
-    private WeixinService weixinService;
+    private WeiXinService weixinService;
 
     @Autowired
     private PaymentInfoService paymentInfoService;
