@@ -5,6 +5,7 @@ import com.gkyx.common.result.Result;
 import com.gkyx.home.service.HomeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +17,9 @@ import java.util.Map;
 @Api(tags = "首页接口")
 @RestController
 @RequestMapping("api/home")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class HomeApiController {
 
-    @Autowired
     private HomeService homeService;
 
     @ApiOperation("首页数据显示接口")

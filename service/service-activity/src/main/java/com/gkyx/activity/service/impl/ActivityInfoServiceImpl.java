@@ -9,6 +9,7 @@ import com.gkyx.activity.mapper.ActivityRuleMapper;
 import com.gkyx.activity.mapper.ActivitySkuMapper;
 import com.gkyx.activity.service.ActivityInfoService;
 import com.gkyx.activity.service.CouponInfoService;
+import com.gkyx.client.product.ProductFeignClient;
 import com.gkyx.enums.ActivityType;
 import com.gkyx.model.activity.ActivityInfo;
 import com.gkyx.model.activity.ActivityRule;
@@ -19,6 +20,7 @@ import com.gkyx.model.product.SkuInfo;
 import com.gkyx.vo.activity.ActivityRuleVo;
 import com.gkyx.vo.order.CartInfoVo;
 import com.gkyx.vo.order.OrderConfirmVo;
+import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,18 +40,15 @@ import java.util.stream.Collectors;
  * @since 2023-04-07
  */
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, ActivityInfo> implements ActivityInfoService {
 
-    @Autowired
     private ActivityRuleMapper activityRuleMapper;
 
-    @Autowired
     private ActivitySkuMapper activitySkuMapper;
 
-    @Autowired
     private ProductFeignClient productFeignClient;
 
-    @Autowired
     private CouponInfoService couponInfoService;
 
     //根据skuID获取营销数据和优惠卷

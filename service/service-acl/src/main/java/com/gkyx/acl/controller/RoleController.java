@@ -8,6 +8,7 @@ import com.gkyx.model.acl.Role;
 import com.gkyx.vo.acl.RoleQueryVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,11 +17,11 @@ import java.util.List;
 @Api(tags = "角色接口")
 @RestController
 @RequestMapping("/admin/acl/role")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin //跨域
 public class RoleController {
 
     //注入service
-    @Autowired
     private RoleService roleService;
 
     //1 角色列表（条件分页查询）

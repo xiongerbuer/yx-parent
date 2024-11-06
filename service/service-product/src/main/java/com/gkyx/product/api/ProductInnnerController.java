@@ -7,6 +7,7 @@ import com.gkyx.product.service.SkuInfoService;
 import com.gkyx.vo.product.SkuInfoVo;
 import com.gkyx.vo.product.SkuStockLockVo;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,12 +15,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/product")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class ProductInnnerController {
 
-    @Autowired
     private CategoryService categoryService;
 
-    @Autowired
     private SkuInfoService skuInfoService;
 
     //根据分类id获取分类信息

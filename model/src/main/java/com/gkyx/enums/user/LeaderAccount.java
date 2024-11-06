@@ -1,8 +1,8 @@
-package com.atguigu.ssyx.enums.user;
+package com.gkyx.enums.user;
 
-import com.atguigu.ssyx.model.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.gkyx.model.base.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

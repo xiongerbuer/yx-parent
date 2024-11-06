@@ -5,6 +5,7 @@ import com.gkyx.common.result.Result;
 import com.gkyx.model.sys.Ware;
 import com.gkyx.sys.service.WareService;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +25,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin/sys/ware")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class WareController {
 
-    @Autowired
     private WareService wareService;
 
     //查询所有仓库列表

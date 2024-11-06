@@ -10,6 +10,7 @@ import com.gkyx.model.acl.Admin;
 import com.gkyx.vo.acl.AdminQueryVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,13 +20,12 @@ import java.util.Map;
 @Api(tags = "用户接口")
 @RestController
 @RequestMapping("/admin/acl/user")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class AdminControlller {
 
-    @Autowired
     private AdminService adminService;
 
-    @Autowired
     private RoleService roleService;
 
     //为用户进行分配

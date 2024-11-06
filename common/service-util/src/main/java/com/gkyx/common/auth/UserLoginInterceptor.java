@@ -1,8 +1,8 @@
 package com.gkyx.common.auth;
 
-import com.atguigu.ssyx.vo.user.UserLoginVo;
 import com.gkyx.common.constant.RedisConst;
 import com.gkyx.common.utils.JwtHelper;
+import com.gkyx.vo.user.UserLoginVo;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;

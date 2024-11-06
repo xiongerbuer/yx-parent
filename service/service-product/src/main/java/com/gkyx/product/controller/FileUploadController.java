@@ -4,6 +4,7 @@ import com.gkyx.common.result.Result;
 import com.gkyx.product.service.FileUploadService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,10 +15,10 @@ import org.springframework.web.multipart.MultipartFile;
 @Api(tags = "文件上传接口")
 @RestController
 @RequestMapping("admin/product")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class FileUploadController {
 
-    @Autowired
     private FileUploadService fileUploadService;
 
     //图片上传的方法

@@ -22,6 +22,7 @@ import com.gkyx.product.service.SkuPosterService;
 import com.gkyx.vo.product.SkuInfoQueryVo;
 import com.gkyx.vo.product.SkuInfoVo;
 import com.gkyx.vo.product.SkuStockLockVo;
+import lombok.AllArgsConstructor;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.BeanUtils;
@@ -43,27 +44,22 @@ import java.util.List;
  * @since 2023-04-04
  */
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> implements SkuInfoService {
 
     //sku图片
-    @Autowired
     private SkuImageService skuImageService;
 
     //sku平台属性
-    @Autowired
     private SkuAttrValueService skuAttrValueService;
 
     //sku海报
-    @Autowired
     private SkuPosterService skuPosterService;
 
-    @Autowired
     private RabbitService rabbitService;
 
-    @Autowired
     private RedisTemplate redisTemplate;
 
-    @Autowired
     private RedissonClient redissonClient;
 
     //添加商品sku信息

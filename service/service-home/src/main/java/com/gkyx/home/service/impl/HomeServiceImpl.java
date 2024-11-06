@@ -1,10 +1,14 @@
 package com.gkyx.home.service.impl;
 
+import com.gkyx.client.product.ProductFeignClient;
+import com.gkyx.client.search.SkuFeignClient;
+import com.gkyx.client.user.UserFeignClient;
 import com.gkyx.home.service.HomeService;
 import com.gkyx.model.product.Category;
 import com.gkyx.model.product.SkuInfo;
 import com.gkyx.model.search.SkuEs;
 import com.gkyx.vo.user.LeaderAddressVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,15 +17,13 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class HomeServiceImpl implements HomeService {
 
-    @Autowired
     private UserFeignClient userFeignClient;
 
-    @Autowired
     private ProductFeignClient productFeignClient;
 
-    @Autowired
     private SkuFeignClient skuFeignClient;
 
     //首页数据显示接口

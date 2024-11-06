@@ -14,6 +14,7 @@ import com.gkyx.mq.service.RabbitService;
 import com.gkyx.order.client.OrderFeignClient;
 import com.gkyx.payment.mapper.PaymentInfoMapper;
 import com.gkyx.payment.service.PaymentInfoService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,12 +23,11 @@ import java.util.Date;
 import java.util.Map;
 
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class PaymentInfoServiceImpl extends ServiceImpl<PaymentInfoMapper, PaymentInfo> implements PaymentInfoService {
 
-    @Autowired
     private OrderFeignClient orderFeignClient;
 
-    @Autowired
     private RabbitService rabbitService;
 
     @Override

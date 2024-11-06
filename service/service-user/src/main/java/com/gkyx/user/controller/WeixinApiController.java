@@ -15,6 +15,7 @@ import com.gkyx.user.utils.HttpClientUtils;
 import com.gkyx.vo.user.LeaderAddressVo;
 import com.gkyx.vo.user.UserLoginVo;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -25,12 +26,11 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/api/user/weixin")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class WeixinApiController {
 
-    @Autowired
     private UserService userService;
 
-    @Autowired
     private RedisTemplate redisTemplate;
 
     //用户微信授权登录

@@ -4,6 +4,7 @@ import com.gkyx.common.result.Result;
 import com.gkyx.model.product.Attr;
 import com.gkyx.product.service.AttrService;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,10 +20,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin/product/attr")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class AttrController {
 
-    @Autowired
     private AttrService attrService;
 
     //平台属性列表方法

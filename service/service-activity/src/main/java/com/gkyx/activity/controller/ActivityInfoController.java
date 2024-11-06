@@ -9,6 +9,7 @@ import com.gkyx.model.activity.ActivityInfo;
 import com.gkyx.model.product.SkuInfo;
 import com.gkyx.vo.activity.ActivityRuleVo;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,10 +26,10 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/admin/activity/activityInfo")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class ActivityInfoController {
 
-    @Autowired
     private ActivityInfoService activityInfoService;
 
     //列表

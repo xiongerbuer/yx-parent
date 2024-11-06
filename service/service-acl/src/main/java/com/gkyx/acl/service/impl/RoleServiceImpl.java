@@ -10,6 +10,7 @@ import com.gkyx.acl.service.RoleService;
 import com.gkyx.model.acl.AdminRole;
 import com.gkyx.model.acl.Role;
 import com.gkyx.vo.acl.RoleQueryVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -21,10 +22,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements RoleService {
 
     //用户角色关系
-    @Autowired
     private AdminRoleService adminRoleService;
 
     //1 角色列表（条件分页查询）

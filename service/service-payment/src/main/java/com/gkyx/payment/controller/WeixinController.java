@@ -5,6 +5,7 @@ import com.gkyx.common.result.ResultCodeEnum;
 import com.gkyx.payment.service.PaymentInfoService;
 import com.gkyx.payment.service.WeiXinService;
 import io.swagger.annotations.Api;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,12 +17,11 @@ import java.util.Map;
 @Api(tags = "微信支付接口")
 @RestController
 @RequestMapping("/api/payment/weixin")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class WeixinController {
 
-    @Autowired
     private WeiXinService weixinService;
 
-    @Autowired
     private PaymentInfoService paymentInfoService;
 
     //调用微信支付系统生成预付单

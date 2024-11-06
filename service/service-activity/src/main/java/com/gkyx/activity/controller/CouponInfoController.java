@@ -6,6 +6,7 @@ import com.gkyx.activity.service.CouponInfoService;
 import com.gkyx.common.result.Result;
 import com.gkyx.model.activity.CouponInfo;
 import com.gkyx.vo.activity.CouponRuleVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,10 +22,10 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/admin/activity/couponInfo")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class CouponInfoController {
 
-    @Autowired
     private CouponInfoService couponInfoService;
 
     //1 优惠卷分页查询

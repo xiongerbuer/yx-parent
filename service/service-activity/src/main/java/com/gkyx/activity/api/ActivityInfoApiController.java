@@ -7,6 +7,7 @@ import com.gkyx.model.order.CartInfo;
 import com.gkyx.vo.order.CartInfoVo;
 import com.gkyx.vo.order.OrderConfirmVo;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +18,11 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/activity")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class ActivityInfoApiController {
 
-    @Autowired
     private ActivityInfoService activityInfoService;
 
-    @Autowired
     private CouponInfoService couponInfoService;
 
     //获取购物车里面满足条件优惠卷和活动的信息

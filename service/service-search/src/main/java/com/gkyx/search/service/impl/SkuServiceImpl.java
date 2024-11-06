@@ -10,6 +10,7 @@ import com.gkyx.model.search.SkuEs;
 import com.gkyx.search.repository.SkuRepository;
 import com.gkyx.search.service.SkuService;
 import com.gkyx.vo.search.SkuEsQueryVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,18 +26,15 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class SkuServiceImpl implements SkuService {
 
-    @Autowired
     private SkuRepository skuRepository;
 
-    @Autowired
     private ProductFeignClient productFeignClient;
 
-    @Autowired
     private ActivityFeignClient activityFeignClient;
 
-    @Autowired
     private RedisTemplate redisTemplate;
 
     //更新商品热度

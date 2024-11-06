@@ -8,6 +8,7 @@ import com.gkyx.payment.service.WeiXinService;
 import com.gkyx.payment.utils.ConstantPropertiesUtils;
 import com.gkyx.payment.utils.HttpClient;
 import com.gkyx.vo.user.UserLoginVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -19,12 +20,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class WeiXinServiceImpl implements WeiXinService {
 
-    @Autowired
     private PaymentInfoService paymentInfoService;
 
-    @Autowired
     private RedisTemplate redisTemplate;
 
     //调用微信支付系统生成预付单

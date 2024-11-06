@@ -13,6 +13,7 @@ import com.gkyx.vo.order.OrderSubmitVo;
 import com.gkyx.vo.order.OrderUserQueryVo;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,9 +29,9 @@ import java.util.Date;
  */
 @RestController
 @RequestMapping(value="/api/order")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class OrderInfoController {
 
-    @Autowired
     private OrderInfoService orderInfoService;
 
     //订单查询

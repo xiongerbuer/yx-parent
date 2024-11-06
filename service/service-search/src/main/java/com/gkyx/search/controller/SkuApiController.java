@@ -4,6 +4,7 @@ import com.gkyx.common.result.Result;
 import com.gkyx.model.search.SkuEs;
 import com.gkyx.search.service.SkuService;
 import com.gkyx.vo.search.SkuEsQueryVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,9 +18,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/search/sku")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class SkuApiController {
 
-    @Autowired
     private SkuService skuService;
 
     //查询分类商品

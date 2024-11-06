@@ -1,6 +1,7 @@
 package com.gkyx.common.auth;
 
-import com.atguigu.ssyx.vo.user.UserLoginVo;
+
+import com.gkyx.vo.user.UserLoginVo;
 
 //ThreadLocal工具类
 public class AuthContextHolder {

@@ -1,12 +1,14 @@
 package com.gkyx.cart.service.impl;
 
 import com.gkyx.cart.service.CartInfoService;
+import com.gkyx.client.product.ProductFeignClient;
 import com.gkyx.common.constant.RedisConst;
 import com.gkyx.common.exception.GkyxException;
 import com.gkyx.common.result.ResultCodeEnum;
 import com.gkyx.enums.SkuType;
 import com.gkyx.model.order.CartInfo;
 import com.gkyx.model.product.SkuInfo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -22,12 +24,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class CartInfoServiceImpl implements CartInfoService {
 
-    @Autowired
     private RedisTemplate redisTemplate;
 
-    @Autowired
     private ProductFeignClient productFeignClient;
 
     //返回购物车在redis的key

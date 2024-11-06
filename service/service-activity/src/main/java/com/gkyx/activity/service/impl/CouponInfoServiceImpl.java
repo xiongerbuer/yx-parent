@@ -8,6 +8,7 @@ import com.gkyx.activity.mapper.CouponInfoMapper;
 import com.gkyx.activity.mapper.CouponRangeMapper;
 import com.gkyx.activity.mapper.CouponUseMapper;
 import com.gkyx.activity.service.CouponInfoService;
+import com.gkyx.client.product.ProductFeignClient;
 import com.gkyx.enums.CouponRangeType;
 import com.gkyx.enums.CouponStatus;
 import com.gkyx.model.activity.CouponInfo;
@@ -16,6 +17,7 @@ import com.gkyx.model.activity.CouponUse;
 import com.gkyx.model.order.CartInfo;
 import com.gkyx.model.product.SkuInfo;
 import com.gkyx.vo.activity.CouponRuleVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -33,15 +35,13 @@ import java.util.stream.Collectors;
  * @since 2023-04-07
  */
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class CouponInfoServiceImpl extends ServiceImpl<CouponInfoMapper, CouponInfo> implements CouponInfoService {
 
-    @Autowired
     private CouponRangeMapper couponRangeMapper;
 
-    @Autowired
     private CouponUseMapper couponUseMapper;
 
-    @Autowired
     private ProductFeignClient productFeignClient;
 
     //2 根据skuId+userId查询优惠卷信息

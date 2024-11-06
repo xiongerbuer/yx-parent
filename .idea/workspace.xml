@@ -4,145 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f6cc618-bc6c-4e3d-9268-d2d6722b0f5b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="2f6cc618-bc6c-4e3d-9268-d2d6722b0f5b" name="Changes" comment="commit:结构调整">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/rabbit_util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/rabbit_util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/ActivityType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/BillType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/CouponRangeType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/CouponStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/CouponType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/OrderStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/PaymentStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/PaymentType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/ProcessStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/SkuType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/UserType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/Driver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/Leader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/LeaderAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/LeaderBank.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/LeaderBill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/LeaderUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/LeaderWithdraw.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/UserDelivery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/enums/user/UserLoginLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/acl/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/acl/AdminRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/acl/Permission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/acl/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/acl/RolePermission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/ActivityInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/ActivityRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/ActivitySku.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/CouponInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/CouponRange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/CouponUse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/Seckill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/SeckillSku.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/SeckillSkuNotice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/activity/SeckillTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/base/BaseEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/base/BaseMongoEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/base/MqRepeatRecord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/CartInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/OrderDeliver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/OrderInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/OrderItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/OrderLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/OrderReturnApply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/OrderReturnReason.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/OrderSet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/PaymentInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/order/RefundInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/Attr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/AttrGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/CommentReplay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/SkuAttrValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/SkuImage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/SkuInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/SkuPoster.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/product/SkuStockHistory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/search/LeaderEs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/search/SkuEs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/sys/Region.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/sys/RegionWare.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/model/sys/Ware.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/acl/AdminLoginVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/acl/AdminQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/acl/RoleQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/activity/ActivityRuleVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/activity/CouponRuleVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/activity/SeckillQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/activity/SeckillSkuNoticeVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/activity/SeckillSkuQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/activity/SeckillSkuVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/CartInfoVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/OrderConfirmVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/OrderDeliverVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/OrderItemMqVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/OrderItemParamVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/OrderMqVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/OrderQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/OrderSubmitVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/OrderUserQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/order/StockStatisticsVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/product/AttrGroupQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/product/CategoryQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/product/CategoryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/product/SkuInfoQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/product/SkuInfoVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/product/SkuStockLockVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/product/SkuStockVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/product/WareQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/search/LeaderEsQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/search/SkuEsQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/sys/RegionVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/sys/RegionWareQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/user/LeaderAddressVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/user/LeaderBillQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/user/LeaderQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/user/LeaderVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/user/UserLoginVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/user/UserQueryVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/ssyx/vo/user/WeixinVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-client/service-activity-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/service-activity-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-client/service-cart-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/service-cart-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-client/service-order-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/service-order-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-client/service-product-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/service-product-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-client/service-search-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/service-search-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-client/service-user-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/service-user-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-gateway/src/main/java/com/atguigu/ssyx/ServiceGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-gateway/src/main/java/com/atguigu/ssyx/ServiceGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-acl/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-activity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-activity/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-cart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-cart/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-home/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-home/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-order/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-payment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-payment/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-product/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-search/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-search/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-user/src/main/java/com/atguigu/ssyx/ServiceUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-user/src/main/java/com/gkyx/user/ServiceUserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-user/src/main/java/com/atguigu/ssyx/user/api/LeaderAddressApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-user/src/main/java/com/atguigu/ssyx/user/api/LeaderAddressApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-user/src/main/java/com/atguigu/ssyx/user/controller/WeixinApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-user/src/main/java/com/atguigu/ssyx/user/controller/WeixinApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/gkyx/common/auth/AuthContextHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/gkyx/common/auth/AuthContextHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderWithdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/LeaderWithdraw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/UserDelivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/UserDelivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/UserLoginLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/enums/user/UserLoginLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/acl/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/acl/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/acl/AdminRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/acl/AdminRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/acl/RolePermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/acl/RolePermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/ActivityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/ActivityInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/ActivityRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/ActivityRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/ActivitySku.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/ActivitySku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/CouponInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/CouponInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/CouponRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/CouponRange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/CouponUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/CouponUse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/Seckill.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/Seckill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/SeckillSku.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/SeckillSku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/SeckillSkuNotice.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/SeckillSkuNotice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/SeckillTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/gkyx/model/activity/SeckillTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-gateway/target/classes/com/atguigu/ssyx/ServiceGatewayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-gateway/target/classes/com/atguigu/ssyx/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-user/src/main/java/com/gkyx/user/ServiceUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-user/src/main/java/com/gkyx/user/ServiceUserApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -151,6 +47,17 @@
         <option value="Interface" />
         <option value="Class" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -175,46 +82,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ServiceGatewayApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;D:/IdeaProject/yx-parent/service/service-user/src/main/java/com/gkyx&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IdeaProject/yx-parent/model/src/main/java/com/gkyx&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;service.view.auto.scroll.from.source&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;spring.boot&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;674cbec4ac0cba9d66bae3d49f2034c1&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ServiceGatewayApplication (1).executor": "Debug",
+    "Spring Boot.ServiceGatewayApplication.executor": "Debug",
+    "Spring Boot.ServiceUserApplication (1).executor": "Debug",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "D:/IdeaProject/yx-parent/service/service-user/src/main/java/com/gkyx",
+    "last_opened_file_path": "D:/IdeaProject/yx-parent/service/service-search/src/main/java/com/gkyx/search",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "service.view.auto.scroll.from.source": "true",
+    "settings.editor.selected.configurable": "spring.boot",
+    "spring.configuration.checksum": "674cbec4ac0cba9d66bae3d49f2034c1",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IdeaProject\yx-parent\model\src\main\java\com\gkyx" />
-      <recent name="D:\IdeaProject\yx-parent\service\service-user\src\main\java\com\gkyx\user" />
-      <recent name="C:\Users\Administrator\Desktop\ssyx-project\code\guigu-ssyx-parent\service\service-payment\src\main\resources" />
-      <recent name="C:\Users\Administrator\Desktop\ssyx-project\code\guigu-ssyx-parent\service\service-payment\src\main\java\com\atguigu\ssyx\payment\utils" />
-      <recent name="C:\Users\Administrator\Desktop\ssyx-project\code\guigu-ssyx-parent\common\common-util\src\main\java\com\atguigu\ssyx\common\utils" />
+      <recent name="D:\IdeaProject\yx-parent\service\service-search\src\main\java\com\gkyx\search" />
+      <recent name="D:\IdeaProject\yx-parent\service\service-product\src\main\java\com\gkyx\product" />
+      <recent name="D:\IdeaProject\yx-parent\service\service-payment\src\main\java\com\gkyx\payment" />
+      <recent name="D:\IdeaProject\yx-parent\service\service-order\src\main\java\com\gkyx\order" />
+      <recent name="D:\IdeaProject\yx-parent\service\service-cart\src\main\java\com\gkyx\cart" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.atguigu.ssyx" />
-      <recent name="demo" />
+      <recent name="com.gkyx" />
+      <recent name="com.gkyx.activity.client" />
+      <recent name="com.gkyx.cart.client" />
+      <recent name="com.gkyx.order.client" />
+      <recent name="com.gkyx.client.product" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -224,7 +136,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceUserApplication (1)">
     <configuration name="CodeGet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.atguigu.ssyx.CodeGet" />
       <module name="service-util" />
@@ -251,9 +163,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceAclApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="service-acl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gkyx.ServiceAclApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceAclApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="service-acl" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.ssyx.ServiceAclApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceActivityApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="service-activity" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gkyx.ServiceActivityApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -271,6 +199,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceCartApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="service-cart" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gkyx.ServiceCartApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceCartApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="service-cart" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.ssyx.ServiceCartApplication" />
@@ -280,6 +216,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceGatewayApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gkyx.ServiceGatewayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -310,6 +253,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceOrderApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="service-order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gkyx.ServiceOrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceOrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="service-order" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.ssyx.ServiceOrderApplication" />
@@ -319,6 +270,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicePaymentApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="service-payment" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gkyx.ServicePaymentApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -336,6 +295,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceProductApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="service-product" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gkyx.ServiceProductApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="service-product" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.ssyx.ServiceProductApplication" />
@@ -349,6 +316,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceSearchApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="service-search" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gkyx.ServiceSearchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceSearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="service-search" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.ssyx.ServiceSearchApplication" />
@@ -358,6 +333,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceSysApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="service-sys" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gkyx.ServiceSysApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -393,6 +376,15 @@
     <list>
       <item itemvalue="Application.CodeGet" />
       <item itemvalue="Application.Demo1" />
+      <item itemvalue="Spring Boot.ServiceAclApplication (1)" />
+      <item itemvalue="Spring Boot.ServiceActivityApplication (1)" />
+      <item itemvalue="Spring Boot.ServiceCartApplication (1)" />
+      <item itemvalue="Spring Boot.ServiceGatewayApplication (1)" />
+      <item itemvalue="Spring Boot.ServiceOrderApplication (1)" />
+      <item itemvalue="Spring Boot.ServicePaymentApplication (1)" />
+      <item itemvalue="Spring Boot.ServiceProductApplication (1)" />
+      <item itemvalue="Spring Boot.ServiceSearchApplication (1)" />
+      <item itemvalue="Spring Boot.ServiceSysApplication (1)" />
       <item itemvalue="Spring Boot.ServiceUserApplication (1)" />
       <item itemvalue="Spring Boot.ServiceAclApplication" />
       <item itemvalue="Spring Boot.ServiceSysApplication" />
@@ -470,8 +462,17 @@
       <workItem from="1687829552885" duration="635000" />
       <workItem from="1688711513340" duration="2135000" />
       <workItem from="1730776959439" duration="3356000" />
-      <workItem from="1730855552601" duration="1165000" />
+      <workItem from="1730855552601" duration="9812000" />
     </task>
+    <task id="LOCAL-00001" summary="commit:结构调整">
+      <option name="closed" value="true" />
+      <created>1730870572963</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730870572963</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,6 +480,21 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="application.yml" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit:结构调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit:结构调整" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

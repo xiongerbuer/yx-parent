@@ -3,6 +3,7 @@ package com.gkyx.search.receiver;
 import com.gkyx.mq.constant.MqConst;
 import com.gkyx.search.service.SkuService;
 import com.rabbitmq.client.Channel;
+import lombok.AllArgsConstructor;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -14,9 +15,9 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 @Component
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class SkuReceiver {
 
-    @Autowired
     private SkuService skuService;
 
     //商品上架

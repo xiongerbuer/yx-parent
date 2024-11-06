@@ -9,6 +9,7 @@ import com.gkyx.sys.service.RegionWareService;
 import com.gkyx.vo.sys.RegionWareQueryVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,10 +24,10 @@ import org.springframework.web.bind.annotation.*;
 @Api(tags = "开通区域接口")
 @RestController
 @RequestMapping("/admin/sys/regionWare")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 //@CrossOrigin
 public class RegionWareController {
 
-    @Autowired
     private RegionWareService regionWareService;
 
     //开通区域列表

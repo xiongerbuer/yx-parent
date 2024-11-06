@@ -30,6 +30,7 @@ import com.gkyx.vo.order.OrderSubmitVo;
 import com.gkyx.vo.order.OrderUserQueryVo;
 import com.gkyx.vo.product.SkuStockLockVo;
 import com.gkyx.vo.user.LeaderAddressVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -54,27 +55,21 @@ import java.util.stream.Collectors;
  * @since 2023-04-18
  */
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo> implements OrderInfoService {
 
-    @Autowired
     private UserFeignClient userFeignClient;
 
-    @Autowired
     private CartFeignClient cartFeignClient;
 
-    @Autowired
     private ActivityFeignClient activityFeignClient;
 
-    @Autowired
     private ProductFeignClient productFeignClient;
 
-    @Autowired
     private RedisTemplate redisTemplate;
 
-    @Autowired
     private RabbitService rabbitService;
 
-    @Autowired
     private OrderItemMapper orderItemMapper;
 
     //确认订单

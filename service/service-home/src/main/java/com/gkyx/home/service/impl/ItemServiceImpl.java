@@ -1,7 +1,11 @@
 package com.gkyx.home.service.impl;
 
+import com.gkyx.activity.client.ActivityFeignClient;
+import com.gkyx.client.product.ProductFeignClient;
+import com.gkyx.client.search.SkuFeignClient;
 import com.gkyx.home.service.ItemService;
 import com.gkyx.vo.product.SkuInfoVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,15 +16,13 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @Service
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class ItemServiceImpl implements ItemService {
 
-    @Autowired
     private ProductFeignClient productFeignClient;
 
-    @Autowired
     private ActivityFeignClient activityFeignClient;
 
-    @Autowired
     private SkuFeignClient skuFeignClient;
     @Resource
     private ThreadPoolExecutor threadPoolExecutor;

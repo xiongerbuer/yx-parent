@@ -1,10 +1,10 @@
 package com.gkyx.model.activity;
 
-import com.atguigu.ssyx.model.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.gkyx.enums.ActivityType;
+import com.gkyx.model.base.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

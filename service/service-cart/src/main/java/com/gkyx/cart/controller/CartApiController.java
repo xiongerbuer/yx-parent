@@ -1,10 +1,12 @@
 package com.gkyx.cart.controller;
 
+import com.gkyx.activity.client.ActivityFeignClient;
 import com.gkyx.cart.service.CartInfoService;
 import com.gkyx.common.auth.AuthContextHolder;
 import com.gkyx.common.result.Result;
 import com.gkyx.model.order.CartInfo;
 import com.gkyx.vo.order.OrderConfirmVo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,12 +14,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cart")
+@AllArgsConstructor(onConstructor_ = @Autowired)
 public class CartApiController {
 
-    @Autowired
     private CartInfoService cartInfoService;
     
-    @Autowired
     private ActivityFeignClient activityFeignClient;
 
     //1 根据skuId选中
