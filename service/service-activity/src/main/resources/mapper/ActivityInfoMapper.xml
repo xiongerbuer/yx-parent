@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.atguigu.ssyx.activity.mapper.ActivityInfoMapper">
+<mapper namespace="com.gkyx.activity.mapper.ActivityInfoMapper">
 
-    <resultMap id="ActivityRuleMap" type="com.atguigu.ssyx.model.activity.ActivityRule" autoMapping="true"></resultMap>
-    <resultMap id="CouponInfoMap" type="com.atguigu.ssyx.model.activity.CouponInfo" autoMapping="true"></resultMap>
+    <resultMap id="ActivityRuleMap" type="com.gkyx.model.activity.ActivityRule" autoMapping="true"></resultMap>
+    <resultMap id="CouponInfoMap" type="com.gkyx.model.activity.CouponInfo" autoMapping="true"></resultMap>
 
-    <resultMap id="ActivitySkuMap" type="com.atguigu.ssyx.model.activity.ActivitySku" autoMapping="true"></resultMap>
+    <resultMap id="ActivitySkuMap" type="com.gkyx.model.activity.ActivitySku" autoMapping="true"></resultMap>
 
    <!-- //根据所有skuId列表获取参与活动-->
     <select id="selectCartActivity" resultMap="ActivitySkuMap">
