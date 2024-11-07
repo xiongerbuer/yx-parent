@@ -24,10 +24,9 @@ public class HomeApiController {
 
     @ApiOperation("首页数据显示接口")
     @GetMapping("index")
-    public Result index(HttpServletRequest request) {
+    public Result<Map<String,Object>> index(HttpServletRequest request) {
         Long userId = AuthContextHolder.getUserId();
-        Map<String,Object> map = homeService.homeData(userId);
-        return Result.ok(map);
+        return Result.ok(homeService.homeData(userId));
     }
 
 }

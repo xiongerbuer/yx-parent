@@ -1,6 +1,6 @@
 package com.gkyx.client.search;
 
-import com.atguigu.ssyx.model.search.SkuEs;
+import com.gkyx.model.search.SkuEs;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

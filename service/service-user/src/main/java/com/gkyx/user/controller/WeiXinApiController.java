@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequestMapping("/api/user/weixin")
 @AllArgsConstructor(onConstructor_ = @Autowired)
-public class WeixinApiController {
+public class WeiXinApiController {
 
     private UserService userService;
 
@@ -47,13 +47,12 @@ public class WeixinApiController {
         //get请求
         //拼接请求地址+参数
         /// 地址?name=value&name1=value1
-        StringBuffer url = new StringBuffer()
-                .append("https://api.weixin.qq.com/sns/jscode2session")
-                .append("?appid=%s")
-                .append("&secret=%s")
-                .append("&js_code=%s")
-                .append("&grant_type=authorization_code");
-        String tokenUrl = String.format(url.toString(),
+        String url = "https://api.weixin.qq.com/sns/jscode2session" +
+                "?appid=%s" +
+                "&secret=%s" +
+                "&js_code=%s" +
+                "&grant_type=authorization_code";
+        String tokenUrl = String.format(url,
                                         wxOpenAppId,
                                         wxOpenAppSecret,
                                         code);

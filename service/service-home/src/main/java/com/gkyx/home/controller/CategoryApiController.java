@@ -22,8 +22,7 @@ public class CategoryApiController {
 
     //查询所有分类
     @GetMapping("category")
-    public Result categoryList() {
-        List<Category> categoryList = productFeignClient.findAllCategoryList();
-        return Result.ok(categoryList);
+    public Result<List<Category>> categoryList() {
+        return Result.ok(productFeignClient.findAllCategoryList());
     }
 }
